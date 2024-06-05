@@ -2,6 +2,7 @@ package org.example.Model.Paciente;
 
 
 import org.example.Model.Paciente.Contato.Contato;
+import org.example.Model.Paciente.Endereco.Endereco;
 
 import java.sql.Date;
 
@@ -17,6 +18,7 @@ public class Paciente {
 
     private Contato contato;
 
+    private Endereco endereco;
 
 
 
@@ -51,6 +53,22 @@ public class Paciente {
 
     public void setDatanascimento(Date datanascimento) {
         this.datanascimento = datanascimento;
+    }
+
+    public Contato getContato() {
+        return contato;
+    }
+
+    public void setContato(Contato contato) {
+        this.contato = contato;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
 }
