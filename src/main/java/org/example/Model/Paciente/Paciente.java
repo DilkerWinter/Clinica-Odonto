@@ -14,14 +14,11 @@ public class Paciente {
 
     private String cpf;
 
-    private Date datanascimento;
+    private Date data_nascimento;
 
     private Contato contato;
 
     private Endereco endereco;
-
-
-
 
     public Integer getId() {
         return id;
@@ -47,12 +44,12 @@ public class Paciente {
         this.cpf = cpf;
     }
 
-    public Date getDatanascimento() {
-        return datanascimento;
+    public Date getData_nascimento() {
+        return data_nascimento;
     }
 
-    public void setDatanascimento(Date datanascimento) {
-        this.datanascimento = datanascimento;
+    public void setData_nascimento(Date data_nascimento) {
+        this.data_nascimento = data_nascimento;
     }
 
     public Contato getContato() {
@@ -70,5 +67,4 @@ public class Paciente {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-
 }
