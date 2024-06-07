@@ -4,7 +4,12 @@
  */
 package org.example.Telas;
 
+import org.example.Controller.Funcionario.FuncionarioController;
+import org.example.Model.Funcionario.Cargo;
+import org.example.Model.Funcionario.Funcionario;
+
 import javax.swing.DefaultComboBoxModel;
+import java.util.List;
 
 /**
  *
@@ -66,7 +71,7 @@ public class tela_cadastro extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(206, 6, 147));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 2, 22)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CADASTRO");
 
@@ -89,40 +94,25 @@ public class tela_cadastro extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nome");
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cargo");
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Usuário");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Senha");
 
-        textCadastroNome.setBackground(new java.awt.Color(255, 255, 255));
-        textCadastroNome.setForeground(new java.awt.Color(0, 0, 0));
-
-        textCadastroCargo.setBackground(new java.awt.Color(255, 255, 255));
-        textCadastroCargo.setForeground(new java.awt.Color(0, 0, 0));
         textCadastroCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textCadastroCargoActionPerformed(evt);
             }
         });
-
-        textCadastroUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        textCadastroUsuario.setForeground(new java.awt.Color(0, 0, 0));
-
-        textCadastroSenha.setBackground(new java.awt.Color(255, 255, 255));
-        textCadastroSenha.setForeground(new java.awt.Color(0, 0, 0));
 
         btnVoltar.setBackground(new java.awt.Color(206, 6, 147));
         btnVoltar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -138,10 +128,24 @@ public class tela_cadastro extends javax.swing.JFrame {
         btnConcluirCadastro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnConcluirCadastro.setForeground(new java.awt.Color(255, 255, 255));
         btnConcluirCadastro.setText("Cadastrar");
+        btnConcluirCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConcluirCadastroActionPerformed(evt);
+            }
+        });
 
         boxItem.setBackground(new java.awt.Color(206, 6, 147));
         boxItem.setForeground(new java.awt.Color(255, 255, 255));
-        boxItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionário", "Dentista" }));
+
+        FuncionarioController funcionarioController = new FuncionarioController();
+        List<Cargo> listCargos = funcionarioController.getAllCargos();
+
+        String[] nomesCargos = new String[listCargos.size()];
+        for (int i = 0; i < listCargos.size(); i++) {
+            nomesCargos[i] = listCargos.get(i).getCargo();
+        }
+
+        boxItem.setModel(new javax.swing.DefaultComboBoxModel<>(nomesCargos));
         boxItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxItemActionPerformed(evt);
@@ -217,7 +221,7 @@ public class tela_cadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void textCadastroCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCadastroCargoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_textCadastroCargoActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
@@ -228,6 +232,38 @@ public class tela_cadastro extends javax.swing.JFrame {
   
 
     }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnConcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluirCadastroActionPerformed
+    
+
+        FuncionarioController funcionarioController = new FuncionarioController();
+
+        String inptNome = textCadastroNome.getText();
+        String inptCargo = textCadastroCargo.getText();
+        String inptUsuario = textCadastroUsuario.getText();
+        String inptSenha = textCadastroSenha.getText();
+
+        if (inptNome == null || inptNome.equals("") ||
+                inptCargo == null || inptCargo.equals("") ||
+                inptUsuario == null || inptUsuario.equals("") ||
+                inptSenha == null || inptSenha.equals("")) {
+            System.out.println("Preencha todos os campos");
+        }else {
+            Funcionario funcionario = new Funcionario();
+            funcionario.setNome(inptNome);
+            funcionario.setUsuario(inptUsuario);
+            funcionario.setSenha(inptSenha);
+            Cargo cargo  = new Cargo();
+            cargo.setCargo(inptCargo);
+            funcionario.setCargo(cargo);
+
+            funcionarioController.addFuncionario(funcionario);
+            System.out.println("Funcionario Cadastrado com sucesso");
+        }
+
+
+
+    }//GEN-LAST:event_btnConcluirCadastroActionPerformed
 
     private void boxItemActionPerformed(java.awt.event.ActionEvent evt) {                                        
 

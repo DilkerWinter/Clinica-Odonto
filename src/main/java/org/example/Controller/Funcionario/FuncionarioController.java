@@ -50,4 +50,8 @@ public class FuncionarioController {
     public Funcionario fazerLogin(Login login) {
         return funcionarioDAO.fazerLogin(login);
     }
+
+    public List<Cargo> getAllCargos(){
+        return cargoDAO.getTodos();
+    }
 }
