@@ -3,6 +3,7 @@ package org.example;
 import org.example.Controller.Funcionario.FuncionarioController;
 import org.example.Model.Funcionario.Cargo;
 import org.example.Model.Funcionario.Funcionario;
+import org.example.Telas.TelaLogin;
 
 public class Main {
     public static void main(String[] args) {
@@ -63,18 +64,19 @@ public class Main {
 //        }
 
 //FUNCIONARIOS
-        FuncionarioController funcionarioController = new FuncionarioController();
-        Funcionario novoFuncionario = new Funcionario();
+//        FuncionarioController funcionarioController = new FuncionarioController();
+//        Funcionario novoFuncionario = new Funcionario();
+//
+//        novoFuncionario.setNome("Bruno");
+//        novoFuncionario.setUsuario("bruno");
+//        novoFuncionario.setSenha("123");
+//        Cargo novoCargo = new Cargo();
+//
+//        novoCargo.setCargo("Funcionario");
+//        novoFuncionario.setCargo(novoCargo);
+//       funcionarioController.addFuncionario(novoFuncionario);
 
-        novoFuncionario.setNome("Marquinhos Administrador");
-        novoFuncionario.setUsuario("MarquininhiADMa");
-        novoFuncionario.setSenha("123456");
-
-        Cargo novoCargo = new Cargo();
-        novoCargo.setCargo("Adiministrador");
-        novoFuncionario.setCargo(novoCargo);
-        funcionarioController.addFuncionario(novoFuncionario);
-
-
+        TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
     }
 }

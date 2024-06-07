@@ -4,6 +4,7 @@ import org.example.DAO.Funcionario.FuncionarioDAOImpl;
 import org.example.DAO.Paciente.Contato.CargoDAOImpl;
 import org.example.Model.Funcionario.Cargo;
 import org.example.Model.Funcionario.Funcionario;
+import org.example.Model.Funcionario.Login;
 import org.example.Model.Paciente.Contato.Contato;
 import org.example.Model.Paciente.Contato.TipoContato;
 import org.example.Model.Paciente.Paciente;
@@ -46,4 +47,7 @@ public class FuncionarioController {
         return funcionarioDAO.getTodos();
     }
 
+    public Funcionario fazerLogin(Login login) {
+        return funcionarioDAO.fazerLogin(login);
+    }
 }

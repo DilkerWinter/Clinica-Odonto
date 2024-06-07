@@ -4,6 +4,10 @@
  */
 package org.example.Telas;
 
+import org.example.Controller.Funcionario.FuncionarioController;
+import org.example.Model.Funcionario.Funcionario;
+import org.example.Model.Funcionario.Login;
+
 /**
  *
  * @author clara
@@ -154,8 +158,19 @@ public class TelaLogin extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String usuario = txtUsuario.getText();
         String senha = passwordSenha.getText();
-        System.out.println(usuario);
-        System.out.println(senha);
+        Login login = new Login();
+        login.setSenha(senha);
+        login.setUsuario(usuario);
+
+        FuncionarioController funcionarioController = new FuncionarioController();
+        Funcionario funcionarioLogado = funcionarioController.fazerLogin(login);
+        if (funcionarioLogado != null){
+            System.out.println("Sucesso ao fazer login" + funcionarioLogado);
+            login.setFuncionario(funcionarioLogado);
+        }else {
+            System.out.println("Erro ao fazer login");
+        }
+
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed

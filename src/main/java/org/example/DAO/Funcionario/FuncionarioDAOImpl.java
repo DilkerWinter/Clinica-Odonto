@@ -2,7 +2,8 @@ package org.example.DAO.Funcionario;
 
 import org.example.DAO.DAO;
 import org.example.Model.Funcionario.Funcionario;
-import org.example.Model.Paciente.Paciente;
+import org.example.Model.Funcionario.Login;
+import org.example.Service.PasswordEncrypt;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -55,5 +56,20 @@ public class FuncionarioDAOImpl implements DAO<Funcionario> {
         List<Funcionario> funcionarios = entityManager.createQuery("SELECT f FROM Funcionario f", Funcionario.class).getResultList();
         entityManager.close();
         return funcionarios;
+    }
+
+    public Funcionario fazerLogin(Login login) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        String usuario = login.getUsuario();
+        String senhaCrypt = PasswordEncrypt.encrypt(login.getSenha());
+
+        Funcionario funcionario = entityManager.createQuery("SELECT f FROM Funcionario f WHERE f.usuario = :usuario", Funcionario.class).setParameter("usuario", usuario).getSingleResult();
+        if (funcionario != null) {
+            if (funcionario.getSenha().equals(senhaCrypt)) {
+                return funcionario;
+            }
+        }
+        return null;
     }
 }
