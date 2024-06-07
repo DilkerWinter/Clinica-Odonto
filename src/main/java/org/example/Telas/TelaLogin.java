@@ -15,6 +15,7 @@ public class TelaLogin extends javax.swing.JFrame {
      */
     public TelaLogin() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -43,7 +44,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(206, 6, 147));
         jPanel2.setForeground(new java.awt.Color(202, 6, 147));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 2, 22)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CLÍNICA ODONTOLÓGICA");
 
