@@ -4,20 +4,33 @@ package org.example.Model.Paciente;
 import org.example.Model.Paciente.Contato.Contato;
 import org.example.Model.Paciente.Endereco.Endereco;
 
+import javax.persistence.*;
 import java.sql.Date;
 
+@Entity
+@Table(name = "paciente")
 public class Paciente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
     private String nome;
 
+    @Column(unique = true, nullable = false)
     private String cpf;
 
+    @Column(name = "datanascimento", nullable = false)
     private Date data_nascimento;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "contato", referencedColumnName = "id")
     private Contato contato;
 
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco", referencedColumnName = "id")
     private Endereco endereco;
 
     public Integer getId() {

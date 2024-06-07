@@ -1,11 +1,20 @@
 package org.example.Model.Paciente.Endereco;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "cidade")
 public class Cidade {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String cidade;
+    @Column(nullable = false)
+    private String nome;
 
+    @ManyToOne
+    @JoinColumn(name = "uf_sigla", referencedColumnName = "sigla")
     private Uf uf;
 
     public Integer getId() {
@@ -16,12 +25,12 @@ public class Cidade {
         this.id = id;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getNome() {
+        return nome;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Uf getUf() {

@@ -1,13 +1,23 @@
 package org.example.Model.Paciente.Endereco;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "endereco")
 public class Endereco {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
     private String rua;
 
+    @Column(nullable = false)
     private String numero;
 
+    @ManyToOne
+    @JoinColumn(name = "cidade_id", referencedColumnName = "id")
     private Cidade cidade;
 
     public Integer getId() {

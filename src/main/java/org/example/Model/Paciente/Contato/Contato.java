@@ -1,11 +1,20 @@
 package org.example.Model.Paciente.Contato;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "contato")
 public class Contato {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "informacao", nullable = false)
     private String informacao;
 
+    @ManyToOne
+    @JoinColumn(name = "tipocontato", referencedColumnName = "tipo")
     private TipoContato tipoContato;
 
     public Integer getId() {
