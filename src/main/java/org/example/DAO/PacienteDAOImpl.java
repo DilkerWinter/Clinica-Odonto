@@ -42,7 +42,7 @@ public class PacienteDAOImpl implements DAO {
     }
 
     @Override
-    public Paciente buscarPorId(int id) {
+    public Paciente getById(int id) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         Paciente paciente = entityManager.find(Paciente.class, id);
         entityManager.close();
@@ -50,7 +50,7 @@ public class PacienteDAOImpl implements DAO {
     }
 
     @Override
-    public List<Paciente> buscarTodos() {
+    public List<Paciente> getTodos() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         List<Paciente> pacientes = entityManager.createQuery("SELECT p FROM Paciente p", Paciente.class).getResultList();
         entityManager.close();

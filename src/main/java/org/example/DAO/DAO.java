@@ -9,6 +9,6 @@ public interface DAO {
     void salvar(Paciente paciente);
     void atualizar(Paciente paciente);
     void deletar(int id);
-    Paciente buscarPorId(int id);
-    List<Paciente> buscarTodos();
+    Paciente getById(int id);
+    List<Paciente> getTodos();
 }

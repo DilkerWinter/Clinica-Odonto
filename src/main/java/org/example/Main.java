@@ -1,21 +1,15 @@
 package org.example;
 
+import org.example.Controller.PacienteController;
 import org.example.Model.Paciente.Paciente;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("org.example_DevDeskP2_jar_1.0-SNAPSHOTPU");
-        EntityManager em = emf.createEntityManager();
-
-        Query query = em.createQuery("SELECT p FROM Paciente p");
-        List<Paciente> pacientes = query.getResultList();
+        PacienteController pacienteController = new PacienteController();
+        List<Paciente> pacientes = pacienteController.getAllPacientes();
 
         for (Paciente paciente : pacientes) {
             System.out.println("---------- Paciente ----------");
@@ -33,8 +27,6 @@ public class Main {
             System.out.println();
         }
 
-        em.close();
-        emf.close();
 
 
 
