@@ -24,12 +24,12 @@ public class Paciente {
     @Column(name = "datanascimento", nullable = false)
     private Date data_nascimento;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "contato", referencedColumnName = "id")
     private Contato contato;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "endereco", referencedColumnName = "id")
     private Endereco endereco;
 
