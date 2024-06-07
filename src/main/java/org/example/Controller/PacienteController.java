@@ -1,6 +1,6 @@
 package org.example.Controller;
 
-import org.example.DAO.PacienteDAOImpl;
+import org.example.DAO.Paciente.PacienteDAOImpl;
 import org.example.Model.Paciente.Paciente;
 
 import java.util.List;
