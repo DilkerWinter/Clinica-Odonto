@@ -44,9 +44,9 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(206, 6, 147));
         jPanel2.setForeground(new java.awt.Color(202, 6, 147));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 22)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 2, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("CLÍNICA ODONTOLÓGICA");
+        jLabel1.setText("CLÍNICA ODONTOLÓGICA"); //TODO: Trocar para "Login" e centralizar
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

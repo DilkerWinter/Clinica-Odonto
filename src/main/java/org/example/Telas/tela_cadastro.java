@@ -66,7 +66,7 @@ public class tela_cadastro extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(206, 6, 147));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 28)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 2, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CADASTRO");
 
