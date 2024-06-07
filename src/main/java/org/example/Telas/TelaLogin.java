@@ -44,6 +44,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(202, 6, 147));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 2, 22)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CLÍNICA ODONTOLÓGICA");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -157,7 +158,10 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        //Criar uma segunda tela e fazer os dados do registro
+        tela_cadastro telacadastro = new tela_cadastro();
+        telacadastro.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
