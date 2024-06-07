@@ -1,21 +1,14 @@
 package org.example;
 
-import org.example.Controller.ContatoController;
-import org.example.Controller.EnderecoController;
-import org.example.Controller.PacienteController;
-import org.example.Model.Paciente.Contato.Contato;
-import org.example.Model.Paciente.Contato.TipoContato;
-import org.example.Model.Paciente.Endereco.Cidade;
-import org.example.Model.Paciente.Endereco.Endereco;
-import org.example.Model.Paciente.Endereco.Uf;
-import org.example.Model.Paciente.Paciente;
-
-import java.sql.Date;
-import java.util.List;
+import org.example.Controller.Funcionario.FuncionarioController;
+import org.example.Model.Funcionario.Cargo;
+import org.example.Model.Funcionario.Funcionario;
 
 public class Main {
     public static void main(String[] args) {
-//
+
+
+//PACIENTE
 //        PacienteController pacienteController = new PacienteController();
 //        EnderecoController enderecoController = new EnderecoController();
 //        ContatoController contatoController = new ContatoController();
@@ -69,7 +62,18 @@ public class Main {
 //            System.out.println();
 //        }
 
+//FUNCIONARIOS
+        FuncionarioController funcionarioController = new FuncionarioController();
+        Funcionario novoFuncionario = new Funcionario();
 
+        novoFuncionario.setNome("Marquinhos Administrador");
+        novoFuncionario.setUsuario("MarquininhiADMa");
+        novoFuncionario.setSenha("123456");
+
+        Cargo novoCargo = new Cargo();
+        novoCargo.setCargo("Adiministrador");
+        novoFuncionario.setCargo(novoCargo);
+        funcionarioController.addFuncionario(novoFuncionario);
 
 
     }

@@ -1,4 +1,4 @@
-package org.example.Controller;
+package org.example.Controller.Paciente;
 
 import org.example.DAO.Paciente.Endereco.CidadeDAOImpl;
 import org.example.DAO.Paciente.Endereco.UfDAOImpl;

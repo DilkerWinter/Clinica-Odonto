@@ -8,6 +8,8 @@
     <class>org.example.Model.Paciente.Endereco.Uf</class>
     <class>org.example.Model.Paciente.Contato.Contato</class>
     <class>org.example.Model.Paciente.Contato.TipoContato</class>
+    <class>org.example.Model.Funcionario.Funcionario</class>
+    <class>org.example.Model.Funcionario.Cargo</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/desk_p2"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
