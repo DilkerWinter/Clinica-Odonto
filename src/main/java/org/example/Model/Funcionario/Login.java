@@ -9,7 +9,7 @@ public class Login {
     public String getUsuario() {
         return usuario;
     }
-
+    //teste
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
