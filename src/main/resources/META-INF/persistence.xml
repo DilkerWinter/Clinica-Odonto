@@ -10,6 +10,10 @@
     <class>org.example.Model.Paciente.Contato.TipoContato</class>
     <class>org.example.Model.Funcionario.Funcionario</class>
     <class>org.example.Model.Funcionario.Cargo</class>
+    <class>org.example.Model.Consulta.Agendamento</class>
+    <class>org.example.Model.Consulta.Consulta</class>
+    <class>org.example.Model.Consulta.Prontuario</class>
+    <class>org.example.Model.Consulta.FormaPagamento</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/desk_p2"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>

@@ -1,13 +1,34 @@
 package org.example;
 
+import org.example.Controller.Consulta.AgendamentoController;
+import org.example.Controller.Consulta.ConsultaController;
 import org.example.Controller.Funcionario.FuncionarioController;
+import org.example.Controller.Paciente.ContatoController;
+import org.example.Controller.Paciente.EnderecoController;
+import org.example.Controller.Paciente.PacienteController;
+import org.example.Model.Consulta.Agendamento;
+import org.example.Model.Consulta.Consulta;
+import org.example.Model.Consulta.FormaPagamento;
+import org.example.Model.Consulta.Prontuario;
 import org.example.Model.Funcionario.Cargo;
 import org.example.Model.Funcionario.Funcionario;
+import org.example.Model.Paciente.Contato.Contato;
+import org.example.Model.Paciente.Contato.TipoContato;
+import org.example.Model.Paciente.Endereco.Cidade;
+import org.example.Model.Paciente.Endereco.Endereco;
+import org.example.Model.Paciente.Endereco.Uf;
+import org.example.Model.Paciente.Paciente;
 import org.example.Telas.TelaLogin;
+
+import java.sql.Date;
+import java.sql.Time;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
+        TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
 
 //PACIENTE
 //        PacienteController pacienteController = new PacienteController();
@@ -62,7 +83,7 @@ public class Main {
 //            System.out.println("Numero: " + paciente.getEndereco().getNumero());
 //            System.out.println();
 //        }
-
+//
 //FUNCIONARIOS
 //        FuncionarioController funcionarioController = new FuncionarioController();
 //        Funcionario novoFuncionario = new Funcionario();
@@ -76,7 +97,65 @@ public class Main {
 //        novoFuncionario.setCargo(novoCargo);
 //       funcionarioController.addFuncionario(novoFuncionario);
 
-        TelaLogin telaLogin = new TelaLogin();
-        telaLogin.setVisible(true);
+
+//AGENDAMENTO
+//        PacienteController pacienteController = new PacienteController();
+//        Paciente novoPaciente = pacienteController.getPacientePorId(17);
+//        FuncionarioController funcionarioController = new FuncionarioController();
+//        Funcionario novoFuncionario = funcionarioController.getFuncionarioPorId(19);
+//        AgendamentoController agendamentoController = new AgendamentoController();
+//
+//        Agendamento novoAgendamento = new Agendamento();
+//        novoAgendamento.setFuncionario(novoFuncionario);
+//        novoAgendamento.setPaciente(novoPaciente);
+//        novoAgendamento.setData(Date.valueOf("2024-06-10")); // Correção aqui
+//        novoAgendamento.setHorario(Time.valueOf("10:00:00"));
+//        agendamentoController.addAgendamento(novoAgendamento);
+//
+//        List<Agendamento> agendamentos = agendamentoController.getAllAgendamentos();
+//
+//        for (Agendamento agendamento : agendamentos) {
+//            System.out.println("---------- Agendamento ----------");
+//            System.out.println("Data: " + agendamento.getData());
+//            System.out.println("Horario: " + agendamento.getHorario());
+//            System.out.println("--- Funcionario ---");
+//            System.out.println("Nome: " + agendamento.getFuncionario().getNome());
+//            System.out.println("Cargo: " + agendamento.getFuncionario().getCargo().getCargo());
+//            System.out.println("--- Paciente ---");
+//            System.out.println("Nome: " + agendamento.getPaciente().getNome());
+//            System.out.println("CPF: " + agendamento.getPaciente().getCpf());
+//            System.out.println("--- Endereco ---");
+//            System.out.println("Estado: " + agendamento.getPaciente().getEndereco().getCidade().getUf().getSigla());
+//            System.out.println("Cidade: " + agendamento.getPaciente().getEndereco().getCidade().getNome());
+//            System.out.println("Rua: " + agendamento.getPaciente().getEndereco().getRua());
+//            System.out.println("Numero: " + agendamento.getPaciente().getEndereco().getNumero());
+//            System.out.println();
+//        }
+
+//CONSULTA
+        Consulta novaConsulta = new Consulta();
+
+        PacienteController pacienteController = new PacienteController();
+        Paciente novoPaciente = pacienteController.getPacientePorId(17);
+        FuncionarioController funcionarioController = new FuncionarioController();
+        Funcionario novoFuncionario = funcionarioController.getFuncionarioPorId(19);
+
+        novaConsulta.setPaciente(novoPaciente);
+        novaConsulta.setFuncionario(novoFuncionario);
+
+        FormaPagamento novaFormaPagamento = new FormaPagamento();
+        novaFormaPagamento.setForma("Pix");
+        novaConsulta.setFormaPagamento(novaFormaPagamento);
+        novaConsulta.setValor(54.03f);
+        novaConsulta.setObservacao("Ta com o dente doendo ai cara");
+
+        Prontuario novoProntuario = new Prontuario();
+        novoProntuario.setDescricao("Cara tem q escova o dente cara");
+
+        novaConsulta.setProntuario(novoProntuario);
+
+        ConsultaController consultaController = new ConsultaController();
+        consultaController.addConsulta(novaConsulta);
+
     }
 }
