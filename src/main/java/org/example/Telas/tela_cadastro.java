@@ -270,18 +270,12 @@ public class tela_cadastro extends javax.swing.JFrame {
         String selectedOption = (String) boxItem.getSelectedItem();
 
 
-        if (selectedOption.equals("Dentista")) {
-
-            textCadastroCargo.setText("Dentista");
-            textCadastroCargo.setEnabled(true);
-        } else if (selectedOption.equals("Funcionário")) {
-
-            textCadastroCargo.setText("Funcionário");
-            textCadastroCargo.setEnabled(true);
-        } else {
-            
+        if (selectedOption.equals(null) || selectedOption.equals("")) {
             textCadastroCargo.setText("");
             textCadastroCargo.setEnabled(false);
+        } else {
+            textCadastroCargo.setText(selectedOption);
+            textCadastroCargo.setEnabled(true);
         }
 
 
