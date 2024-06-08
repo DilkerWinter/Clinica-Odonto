@@ -133,29 +133,29 @@ public class Main {
 //        }
 
 //CONSULTA
-        Consulta novaConsulta = new Consulta();
-
-        PacienteController pacienteController = new PacienteController();
-        Paciente novoPaciente = pacienteController.getPacientePorId(17);
-        FuncionarioController funcionarioController = new FuncionarioController();
-        Funcionario novoFuncionario = funcionarioController.getFuncionarioPorId(19);
-
-        novaConsulta.setPaciente(novoPaciente);
-        novaConsulta.setFuncionario(novoFuncionario);
-
-        FormaPagamento novaFormaPagamento = new FormaPagamento();
-        novaFormaPagamento.setForma("Pix");
-        novaConsulta.setFormaPagamento(novaFormaPagamento);
-        novaConsulta.setValor(54.03f);
-        novaConsulta.setObservacao("Ta com o dente doendo ai cara");
-
-        Prontuario novoProntuario = new Prontuario();
-        novoProntuario.setDescricao("Cara tem q escova o dente cara");
-
-        novaConsulta.setProntuario(novoProntuario);
-
-        ConsultaController consultaController = new ConsultaController();
-        consultaController.addConsulta(novaConsulta);
+//        Consulta novaConsulta = new Consulta();
+//
+//        PacienteController pacienteController = new PacienteController();
+//        Paciente novoPaciente = pacienteController.getPacientePorId(17);
+//        FuncionarioController funcionarioController = new FuncionarioController();
+//        Funcionario novoFuncionario = funcionarioController.getFuncionarioPorId(19);
+//
+//        novaConsulta.setPaciente(novoPaciente);
+//        novaConsulta.setFuncionario(novoFuncionario);
+//
+//        FormaPagamento novaFormaPagamento = new FormaPagamento();
+//        novaFormaPagamento.setForma("Pix");
+//        novaConsulta.setFormaPagamento(novaFormaPagamento);
+//        novaConsulta.setValor(54.03f);
+//        novaConsulta.setObservacao("Ta com o dente doendo ai cara");
+//
+//        Prontuario novoProntuario = new Prontuario();
+//        novoProntuario.setDescricao("Cara tem q escova o dente cara");
+//
+//        novaConsulta.setProntuario(novoProntuario);
+//
+//        ConsultaController consultaController = new ConsultaController();
+//        consultaController.addConsulta(novaConsulta);
 
     }
 }
