@@ -9,6 +9,7 @@ import org.example.Model.Funcionario.Cargo;
 import org.example.Model.Funcionario.Funcionario;
 
 import javax.swing.DefaultComboBoxModel;
+import java.awt.*;
 import java.util.List;
 
 /**
@@ -49,6 +50,7 @@ public class tela_cadastro extends javax.swing.JFrame {
         btnVoltar = new javax.swing.JButton();
         btnConcluirCadastro = new javax.swing.JButton();
         boxItem = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,39 +82,54 @@ public class tela_cadastro extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(144, 144, 144)
+                .addGap(148, 148, 148)
                 .addComponent(jLabel1)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nome");
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cargo");
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Usuário");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Senha");
 
+        textCadastroNome.setBackground(new java.awt.Color(255, 255, 255));
+        textCadastroNome.setForeground(new java.awt.Color(0, 0, 0));
+
+        textCadastroCargo.setBackground(new java.awt.Color(255, 255, 255));
+        textCadastroCargo.setForeground(new java.awt.Color(0, 0, 0));
         textCadastroCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textCadastroCargoActionPerformed(evt);
             }
         });
+
+        textCadastroUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        textCadastroUsuario.setForeground(new java.awt.Color(0, 0, 0));
+
+        textCadastroSenha.setBackground(new java.awt.Color(255, 255, 255));
+        textCadastroSenha.setForeground(new java.awt.Color(0, 0, 0));
 
         btnVoltar.setBackground(new java.awt.Color(206, 6, 147));
         btnVoltar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -136,21 +153,14 @@ public class tela_cadastro extends javax.swing.JFrame {
 
         boxItem.setBackground(new java.awt.Color(206, 6, 147));
         boxItem.setForeground(new java.awt.Color(255, 255, 255));
-
-        FuncionarioController funcionarioController = new FuncionarioController();
-        List<Cargo> listCargos = funcionarioController.getAllCargos();
-
-        String[] nomesCargos = new String[listCargos.size()];
-        for (int i = 0; i < listCargos.size(); i++) {
-            nomesCargos[i] = listCargos.get(i).getCargo();
-        }
-
-        boxItem.setModel(new javax.swing.DefaultComboBoxModel<>(nomesCargos));
+        boxItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionário", "Dentista" }));
         boxItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxItemActionPerformed(evt);
             }
         });
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -162,7 +172,7 @@ public class tela_cadastro extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                         .addComponent(btnConcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,13 +186,19 @@ public class tela_cadastro extends javax.swing.JFrame {
                     .addComponent(textCadastroUsuario)
                     .addComponent(textCadastroSenha))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(115, 115, 115))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textCadastroNome, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -248,6 +264,8 @@ public class tela_cadastro extends javax.swing.JFrame {
                 inptUsuario == null || inptUsuario.equals("") ||
                 inptSenha == null || inptSenha.equals("")) {
             System.out.println("Preencha todos os campos");
+            jLabel6.setText("Preencha todos os campos!");
+            jLabel6.setForeground(Color.RED);
         }else {
             Funcionario funcionario = new Funcionario();
             funcionario.setNome(inptNome);
@@ -259,6 +277,8 @@ public class tela_cadastro extends javax.swing.JFrame {
 
             funcionarioController.addFuncionario(funcionario);
             System.out.println("Funcionario Cadastrado com sucesso");
+            jLabel6.setText("Cadastro efetuado com sucesso!");
+            jLabel6.setForeground(Color.green);
         }
 
 
@@ -325,6 +345,7 @@ public class tela_cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
