@@ -91,11 +91,6 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        txtUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        txtUsuario.setForeground(new java.awt.Color(0, 0, 0));
-
-        passwordSenha.setBackground(new java.awt.Color(255, 255, 255));
-        passwordSenha.setForeground(new java.awt.Color(0, 0, 0));
         passwordSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordSenhaActionPerformed(evt);
@@ -104,16 +99,13 @@ public class TelaLogin extends javax.swing.JFrame {
 
         labelUsuario.setBackground(new java.awt.Color(0, 0, 0));
         labelUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        labelUsuario.setForeground(new java.awt.Color(0, 0, 0));
         labelUsuario.setText("Usuário");
 
         labelSenha.setBackground(new java.awt.Color(0, 0, 0));
         labelSenha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        labelSenha.setForeground(new java.awt.Color(0, 0, 0));
         labelSenha.setText("Senha");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,19 +113,19 @@ public class TelaLogin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordSenha)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(passwordSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtUsuario)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(89, 89, 89))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -211,12 +203,10 @@ public class TelaLogin extends javax.swing.JFrame {
         FuncionarioController funcionarioController = new FuncionarioController();
         Funcionario funcionarioLogado = funcionarioController.fazerLogin(login);
         if (funcionarioLogado != null){
-            System.out.println("Sucesso ao fazer login" + funcionarioLogado);
             login.setFuncionario(funcionarioLogado);
             jLabel2.setText("Login efetuado com sucesso!");
              jLabel2.setForeground(Color.green);
         }else {
-            System.out.println("Erro ao fazer login");
             jLabel2.setText("Usuário ou Senha inválidos!");
             jLabel2.setForeground(Color.RED);
         }

@@ -263,7 +263,6 @@ public class tela_cadastro extends javax.swing.JFrame {
                 inptCargo == null || inptCargo.equals("") ||
                 inptUsuario == null || inptUsuario.equals("") ||
                 inptSenha == null || inptSenha.equals("")) {
-            System.out.println("Preencha todos os campos");
             jLabel6.setText("Preencha todos os campos!");
             jLabel6.setForeground(Color.RED);
         }else {
@@ -276,7 +275,6 @@ public class tela_cadastro extends javax.swing.JFrame {
             funcionario.setCargo(cargo);
 
             funcionarioController.addFuncionario(funcionario);
-            System.out.println("Funcionario Cadastrado com sucesso");
             jLabel6.setText("Cadastro efetuado com sucesso!");
             jLabel6.setForeground(Color.green);
         }

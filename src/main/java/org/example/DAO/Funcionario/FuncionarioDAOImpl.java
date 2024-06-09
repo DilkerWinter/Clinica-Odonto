@@ -7,6 +7,7 @@ import org.example.Service.PasswordEncrypt;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import java.util.List;
 
@@ -64,11 +65,14 @@ public class FuncionarioDAOImpl implements DAO<Funcionario> {
         String usuario = login.getUsuario();
         String senhaCrypt = PasswordEncrypt.encrypt(login.getSenha());
 
-        Funcionario funcionario = entityManager.createQuery("SELECT f FROM Funcionario f WHERE f.usuario = :usuario", Funcionario.class).setParameter("usuario", usuario).getSingleResult();
-        if (funcionario != null) {
-            if (funcionario.getSenha().equals(senhaCrypt)) {
+        try {
+            Funcionario funcionario = entityManager.createQuery("SELECT f FROM Funcionario f WHERE f.usuario = :usuario", Funcionario.class)
+                    .setParameter("usuario", usuario)
+                    .getSingleResult();
+            if (funcionario != null && funcionario.getSenha().equals(senhaCrypt)) {
                 return funcionario;
             }
+        } catch (NoResultException e) {
         }
         return null;
     }
