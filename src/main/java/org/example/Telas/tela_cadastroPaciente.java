@@ -53,7 +53,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
         inputContato = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        inputTipoContato = new javax.swing.JComboBox<>();
+        boxTipoContato = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         inputRua = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -65,8 +65,9 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         inputNumeroCasa = new javax.swing.JTextField();
         btnCadastroPaciente = new javax.swing.JButton();
+        inputTipoContato = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Nome");
 
@@ -107,7 +108,6 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
         jLabel5.setText("Contato");
 
         jLabel6.setText("Tipo de Contato");
-
         ContatoController contatoController = new ContatoController();
         List<TipoContato> tipoContatos = contatoController.getAllTiposContatos();
         String[] arrayTiposContatos = new String[tipoContatos.size()];
@@ -115,12 +115,16 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
             arrayTiposContatos[i] = tipoContatos.get(i).getTipo();
         }
 
-        inputTipoContato.setModel(new javax.swing.DefaultComboBoxModel<>(arrayTiposContatos));
+        boxTipoContato.setModel(new javax.swing.DefaultComboBoxModel<>(arrayTiposContatos));
+        boxTipoContato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxTipoContatoActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Rua");
 
         jLabel8.setText("Cidade");
-
         EnderecoController enderecoController = new EnderecoController();
         List<Cidade> cidades = enderecoController.getAllCidade();
         String[] arrayCidades = new String[cidades.size()];
@@ -197,13 +201,16 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel9)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(inputEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(boxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(inputTipoContato, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(inputContato)
-                                .addComponent(inputDatanascimento))
+                                .addComponent(inputDatanascimento)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(inputEstado, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                                        .addComponent(inputTipoContato))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(boxTipoContato, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(boxEstado, javax.swing.GroupLayout.Alignment.TRAILING, 0, 100, Short.MAX_VALUE))))
                             .addComponent(btnCadastroPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -233,8 +240,9 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputTipoContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boxTipoContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputTipoContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -268,7 +276,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
     private void btnCadastroPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPacienteActionPerformed
         if (inputCidade.getText().isEmpty() || inputEstado.getText().isEmpty() || inputRua.getText().isEmpty() ||
                 inputNumeroCasa.getText().isEmpty() || inputNome.getText().isEmpty() || inputCPF.getText().isEmpty() ||
-                inputDatanascimento.getText().isEmpty() || inputContato.getText().isEmpty() || inputTipoContato.getSelectedItem() == null) {
+                inputDatanascimento.getText().isEmpty() || inputContato.getText().isEmpty() || boxTipoContato.getSelectedItem() == null || inputTipoContato.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
         } else {
             PacienteController pacienteController = new PacienteController();
@@ -298,7 +306,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
             novoContato.setInformacao(inputContato.getText());
 
             TipoContato novoTipoContato = new TipoContato();
-            novoTipoContato.setTipo(inputTipoContato.getSelectedItem().toString());
+            novoTipoContato.setTipo(inputTipoContato.getText());
 
             novoContato.setTipoContato(novoTipoContato);
             contatoController.addContato(novoContato);
@@ -340,7 +348,19 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_boxCidadeActionPerformed
 
-    
+    private void boxTipoContatoActionPerformed(java.awt.event.ActionEvent evt) {
+        String selectedOption = (String) boxTipoContato.getSelectedItem();
+
+
+        if (selectedOption.equals(null) || selectedOption.equals("")) {
+            inputTipoContato.setText("");
+            inputTipoContato.setEnabled(false);
+        } else {
+            inputTipoContato.setText(selectedOption);
+            inputTipoContato.setEnabled(true);
+        }
+
+    }
             
             
     /**
@@ -381,6 +401,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxCidade;
     private javax.swing.JComboBox<String> boxEstado;
+    private javax.swing.JComboBox<String> boxTipoContato;
     private javax.swing.JButton btnCadastroPaciente;
     private javax.swing.JTextField inputCPF;
     private javax.swing.JTextField inputCidade;
@@ -390,7 +411,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField inputNome;
     private javax.swing.JTextField inputNumeroCasa;
     private javax.swing.JTextField inputRua;
-    private javax.swing.JComboBox<String> inputTipoContato;
+    private javax.swing.JTextField inputTipoContato;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

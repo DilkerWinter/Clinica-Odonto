@@ -58,14 +58,19 @@
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="inputEstado" min="-2" pref="130" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="boxEstado" min="-2" pref="100" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="inputTipoContato" alignment="0" max="32767" attributes="0"/>
                               <Component id="inputContato" alignment="0" max="32767" attributes="0"/>
                               <Component id="inputDatanascimento" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="inputEstado" pref="130" max="32767" attributes="0"/>
+                                      <Component id="inputTipoContato" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="boxTipoContato" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="boxEstado" alignment="1" pref="100" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                           <Component id="btnCadastroPaciente" min="-2" pref="237" max="-2" attributes="0"/>
                       </Group>
@@ -106,8 +111,9 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputTipoContato" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="boxTipoContato" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="inputRua" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputTipoContato" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -214,7 +220,7 @@
         <Property name="text" type="java.lang.String" value="Tipo de Contato"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="inputTipoContato">
+    <Component class="javax.swing.JComboBox" name="boxTipoContato">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -303,6 +309,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastroPacienteActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inputTipoContato">
     </Component>
   </SubComponents>
 </Form>
