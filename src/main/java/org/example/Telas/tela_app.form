@@ -126,9 +126,9 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace pref="21" max="32767" attributes="0"/>
-                  <Component id="btnVoltar" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="btnCadastrarPaciente" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace pref="9" max="32767" attributes="0"/>
-                  <Component id="btnVoltar1" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="btnBuscarPaciente" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -140,8 +140,8 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="21" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnVoltar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnVoltar1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnCadastrarPaciente" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnBuscarPaciente" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
@@ -160,7 +160,7 @@
             <Property name="text" type="java.lang.String" value="Paciente"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnVoltar">
+        <Component class="javax.swing.JButton" name="btnCadastrarPaciente">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -179,10 +179,10 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarPacienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnVoltar1">
+        <Component class="javax.swing.JButton" name="btnBuscarPaciente">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -201,7 +201,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltar1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarPacienteActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -224,9 +224,9 @@
                   <EmptySpace pref="16" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="btnVoltar3" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="btnCadastrarAgendamento" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnVoltar2" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="btnBuscarAgendamento" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
@@ -245,8 +245,8 @@
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="21" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnVoltar3" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnVoltar2" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnCadastrarAgendamento" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnBuscarAgendamento" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
@@ -265,7 +265,7 @@
             <Property name="text" type="java.lang.String" value="Agendamento"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnVoltar2">
+        <Component class="javax.swing.JButton" name="btnBuscarAgendamento">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -284,10 +284,10 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltar2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarAgendamentoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnVoltar3">
+        <Component class="javax.swing.JButton" name="btnCadastrarAgendamento">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -306,7 +306,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltar3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarAgendamentoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -332,9 +332,9 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace pref="16" max="32767" attributes="0"/>
-                  <Component id="btnVoltar5" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="btnCadastrarConsulta" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace pref="25" max="32767" attributes="0"/>
-                  <Component id="btnVoltar4" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="btnBuscarConsulta" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace pref="9" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -346,8 +346,8 @@
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="21" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnVoltar5" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnVoltar4" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnCadastrarConsulta" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnBuscarConsulta" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
@@ -366,7 +366,7 @@
             <Property name="text" type="java.lang.String" value="Consulta"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnVoltar5">
+        <Component class="javax.swing.JButton" name="btnCadastrarConsulta">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -385,10 +385,10 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltar5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarConsultaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnVoltar4">
+        <Component class="javax.swing.JButton" name="btnBuscarConsulta">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -407,7 +407,7 @@
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltar4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarConsultaActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -432,27 +432,35 @@
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
-                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="97" max="32767" attributes="0"/>
-                  <Component id="jButton9" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="509" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="btnCriarRelatorioMensal" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                          <Component id="btnCriarRelatorioAnual" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="107" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnCriarRelatorioPaciente" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -463,23 +471,17 @@
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <EmptySpace pref="36" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCriarRelatorioMensal" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnCriarRelatorioAnual" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnCriarRelatorioPaciente" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="96" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -517,23 +519,74 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Por Paciente"/>
+            <Property name="text" type="java.lang.String" value="Paciente"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="btnCriarRelatorioMensal">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton7"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="93" green="6" red="ce" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Gerar"/>
+            <Property name="actionCommand" type="java.lang.String" value=""/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+            <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCriarRelatorioMensalActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="btnCriarRelatorioAnual">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton8"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="93" green="6" red="ce" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Gerar"/>
+            <Property name="actionCommand" type="java.lang.String" value=""/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+            <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCriarRelatorioAnualActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton9">
+        <Component class="javax.swing.JButton" name="btnCriarRelatorioPaciente">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton9"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="93" green="6" red="ce" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Gerar"/>
+            <Property name="actionCommand" type="java.lang.String" value=""/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+            <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCriarRelatorioPacienteActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

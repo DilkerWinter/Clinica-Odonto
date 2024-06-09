@@ -33,24 +33,24 @@ public class tela_app extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        btnVoltar = new javax.swing.JButton();
-        btnVoltar1 = new javax.swing.JButton();
+        btnCadastrarPaciente = new javax.swing.JButton();
+        btnBuscarPaciente = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        btnVoltar2 = new javax.swing.JButton();
-        btnVoltar3 = new javax.swing.JButton();
+        btnBuscarAgendamento = new javax.swing.JButton();
+        btnCadastrarAgendamento = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        btnVoltar5 = new javax.swing.JButton();
-        btnVoltar4 = new javax.swing.JButton();
+        btnCadastrarConsulta = new javax.swing.JButton();
+        btnBuscarConsulta = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btnCriarRelatorioMensal = new javax.swing.JButton();
+        btnCriarRelatorioAnual = new javax.swing.JButton();
+        btnCriarRelatorioPaciente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clinica Odonto");
@@ -87,29 +87,29 @@ public class tela_app extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Paciente");
 
-        btnVoltar.setBackground(new java.awt.Color(255, 255, 255));
-        btnVoltar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnVoltar.setForeground(new java.awt.Color(206, 6, 147));
-        btnVoltar.setText("Cadastrar");
-        btnVoltar.setActionCommand("");
-        btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVoltar.setRequestFocusEnabled(false);
-        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrarPaciente.setBackground(new java.awt.Color(255, 255, 255));
+        btnCadastrarPaciente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCadastrarPaciente.setForeground(new java.awt.Color(206, 6, 147));
+        btnCadastrarPaciente.setText("Cadastrar");
+        btnCadastrarPaciente.setActionCommand("");
+        btnCadastrarPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrarPaciente.setRequestFocusEnabled(false);
+        btnCadastrarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltarActionPerformed(evt);
+                btnCadastrarPacienteActionPerformed(evt);
             }
         });
 
-        btnVoltar1.setBackground(new java.awt.Color(255, 255, 255));
-        btnVoltar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnVoltar1.setForeground(new java.awt.Color(206, 6, 147));
-        btnVoltar1.setText("Buscar");
-        btnVoltar1.setActionCommand("");
-        btnVoltar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVoltar1.setRequestFocusEnabled(false);
-        btnVoltar1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarPaciente.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarPaciente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnBuscarPaciente.setForeground(new java.awt.Color(206, 6, 147));
+        btnBuscarPaciente.setText("Buscar");
+        btnBuscarPaciente.setActionCommand("");
+        btnBuscarPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscarPaciente.setRequestFocusEnabled(false);
+        btnBuscarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltar1ActionPerformed(evt);
+                btnBuscarPacienteActionPerformed(evt);
             }
         });
 
@@ -123,9 +123,9 @@ public class tela_app extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCadastrarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(btnVoltar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBuscarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -135,8 +135,8 @@ public class tela_app extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVoltar1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCadastrarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
 
@@ -148,29 +148,29 @@ public class tela_app extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Agendamento");
 
-        btnVoltar2.setBackground(new java.awt.Color(255, 255, 255));
-        btnVoltar2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnVoltar2.setForeground(new java.awt.Color(206, 6, 147));
-        btnVoltar2.setText("Buscar");
-        btnVoltar2.setActionCommand("");
-        btnVoltar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVoltar2.setRequestFocusEnabled(false);
-        btnVoltar2.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarAgendamento.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarAgendamento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnBuscarAgendamento.setForeground(new java.awt.Color(206, 6, 147));
+        btnBuscarAgendamento.setText("Buscar");
+        btnBuscarAgendamento.setActionCommand("");
+        btnBuscarAgendamento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscarAgendamento.setRequestFocusEnabled(false);
+        btnBuscarAgendamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltar2ActionPerformed(evt);
+                btnBuscarAgendamentoActionPerformed(evt);
             }
         });
 
-        btnVoltar3.setBackground(new java.awt.Color(255, 255, 255));
-        btnVoltar3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnVoltar3.setForeground(new java.awt.Color(206, 6, 147));
-        btnVoltar3.setText("Cadastrar");
-        btnVoltar3.setActionCommand("");
-        btnVoltar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVoltar3.setRequestFocusEnabled(false);
-        btnVoltar3.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrarAgendamento.setBackground(new java.awt.Color(255, 255, 255));
+        btnCadastrarAgendamento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCadastrarAgendamento.setForeground(new java.awt.Color(206, 6, 147));
+        btnCadastrarAgendamento.setText("Cadastrar");
+        btnCadastrarAgendamento.setActionCommand("");
+        btnCadastrarAgendamento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrarAgendamento.setRequestFocusEnabled(false);
+        btnCadastrarAgendamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltar3ActionPerformed(evt);
+                btnCadastrarAgendamentoActionPerformed(evt);
             }
         });
 
@@ -182,9 +182,9 @@ public class tela_app extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnVoltar3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCadastrarAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVoltar2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnBuscarAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 23, Short.MAX_VALUE)
                         .addComponent(jLabel3)
@@ -198,8 +198,8 @@ public class tela_app extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVoltar3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVoltar2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCadastrarAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
 
@@ -211,29 +211,29 @@ public class tela_app extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Consulta");
 
-        btnVoltar5.setBackground(new java.awt.Color(255, 255, 255));
-        btnVoltar5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnVoltar5.setForeground(new java.awt.Color(206, 6, 147));
-        btnVoltar5.setText("Cadastrar");
-        btnVoltar5.setActionCommand("");
-        btnVoltar5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVoltar5.setRequestFocusEnabled(false);
-        btnVoltar5.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrarConsulta.setBackground(new java.awt.Color(255, 255, 255));
+        btnCadastrarConsulta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCadastrarConsulta.setForeground(new java.awt.Color(206, 6, 147));
+        btnCadastrarConsulta.setText("Cadastrar");
+        btnCadastrarConsulta.setActionCommand("");
+        btnCadastrarConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrarConsulta.setRequestFocusEnabled(false);
+        btnCadastrarConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltar5ActionPerformed(evt);
+                btnCadastrarConsultaActionPerformed(evt);
             }
         });
 
-        btnVoltar4.setBackground(new java.awt.Color(255, 255, 255));
-        btnVoltar4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnVoltar4.setForeground(new java.awt.Color(206, 6, 147));
-        btnVoltar4.setText("Buscar");
-        btnVoltar4.setActionCommand("");
-        btnVoltar4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVoltar4.setRequestFocusEnabled(false);
-        btnVoltar4.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarConsulta.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarConsulta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnBuscarConsulta.setForeground(new java.awt.Color(206, 6, 147));
+        btnBuscarConsulta.setText("Buscar");
+        btnBuscarConsulta.setActionCommand("");
+        btnBuscarConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscarConsulta.setRequestFocusEnabled(false);
+        btnBuscarConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltar4ActionPerformed(evt);
+                btnBuscarConsultaActionPerformed(evt);
             }
         });
 
@@ -247,9 +247,9 @@ public class tela_app extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(btnVoltar5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCadastrarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(btnVoltar4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBuscarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(9, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -259,8 +259,8 @@ public class tela_app extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVoltar5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVoltar4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCadastrarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
 
@@ -279,13 +279,46 @@ public class tela_app extends javax.swing.JFrame {
         jLabel7.setText("Mensal");
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Por Paciente");
+        jLabel8.setText("Paciente");
 
-        jButton7.setText("jButton7");
+        btnCriarRelatorioMensal.setBackground(new java.awt.Color(255, 255, 255));
+        btnCriarRelatorioMensal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCriarRelatorioMensal.setForeground(new java.awt.Color(206, 6, 147));
+        btnCriarRelatorioMensal.setText("Gerar");
+        btnCriarRelatorioMensal.setActionCommand("");
+        btnCriarRelatorioMensal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCriarRelatorioMensal.setRequestFocusEnabled(false);
+        btnCriarRelatorioMensal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarRelatorioMensalActionPerformed(evt);
+            }
+        });
 
-        jButton8.setText("jButton8");
+        btnCriarRelatorioAnual.setBackground(new java.awt.Color(255, 255, 255));
+        btnCriarRelatorioAnual.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCriarRelatorioAnual.setForeground(new java.awt.Color(206, 6, 147));
+        btnCriarRelatorioAnual.setText("Gerar");
+        btnCriarRelatorioAnual.setActionCommand("");
+        btnCriarRelatorioAnual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCriarRelatorioAnual.setRequestFocusEnabled(false);
+        btnCriarRelatorioAnual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarRelatorioAnualActionPerformed(evt);
+            }
+        });
 
-        jButton9.setText("jButton9");
+        btnCriarRelatorioPaciente.setBackground(new java.awt.Color(255, 255, 255));
+        btnCriarRelatorioPaciente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCriarRelatorioPaciente.setForeground(new java.awt.Color(206, 6, 147));
+        btnCriarRelatorioPaciente.setText("Gerar");
+        btnCriarRelatorioPaciente.setActionCommand("");
+        btnCriarRelatorioPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCriarRelatorioPaciente.setRequestFocusEnabled(false);
+        btnCriarRelatorioPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarRelatorioPacienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -296,24 +329,27 @@ public class tela_app extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(122, 122, 122)
-                .addComponent(jLabel8)
-                .addGap(78, 78, 78))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jButton7)
-                .addGap(141, 141, 141)
-                .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(jButton9)
-                .addGap(62, 62, 62))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(47, 47, 47)
-                    .addComponent(jLabel7)
-                    .addContainerGap(509, Short.MAX_VALUE)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(btnCriarRelatorioMensal, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel7)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(btnCriarRelatorioAnual, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCriarRelatorioPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)))
+                .addGap(51, 51, 51))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,19 +358,15 @@ public class tela_app extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(36, 36, 36)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9))
-                .addGap(30, 30, 30))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(81, 81, 81)
+                    .addComponent(jLabel8)
                     .addComponent(jLabel7)
-                    .addContainerGap(96, Short.MAX_VALUE)))
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCriarRelatorioMensal, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCriarRelatorioAnual, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCriarRelatorioPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -373,29 +405,41 @@ public class tela_app extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        System.out.println("Pressionado");
-    }//GEN-LAST:event_btnVoltarActionPerformed
+    private void btnCadastrarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarPacienteActionPerformed
+        System.out.println("Cadastrar Paciente");
+    }//GEN-LAST:event_btnCadastrarPacienteActionPerformed
 
-    private void btnVoltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltar1ActionPerformed
+    private void btnBuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPacienteActionPerformed
+        System.out.println("Buscar Paciente");
+    }//GEN-LAST:event_btnBuscarPacienteActionPerformed
 
-    private void btnVoltar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltar2ActionPerformed
+    private void btnBuscarAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAgendamentoActionPerformed
+        System.out.println("Buscar Agendamento");
+    }//GEN-LAST:event_btnBuscarAgendamentoActionPerformed
 
-    private void btnVoltar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltar3ActionPerformed
+    private void btnCadastrarAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarAgendamentoActionPerformed
+        System.out.println("Cadastrar Agendamento");
+    }//GEN-LAST:event_btnCadastrarAgendamentoActionPerformed
 
-    private void btnVoltar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltar4ActionPerformed
+    private void btnBuscarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarConsultaActionPerformed
+        System.out.println("Buscar Consulta");
+    }//GEN-LAST:event_btnBuscarConsultaActionPerformed
 
-    private void btnVoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltar5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltar5ActionPerformed
+    private void btnCadastrarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarConsultaActionPerformed
+        System.out.println("Cadastrar Consulta");
+    }//GEN-LAST:event_btnCadastrarConsultaActionPerformed
+
+    private void btnCriarRelatorioMensalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarRelatorioMensalActionPerformed
+        System.out.println("Relatorio Mensal");
+    }//GEN-LAST:event_btnCriarRelatorioMensalActionPerformed
+
+    private void btnCriarRelatorioAnualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarRelatorioAnualActionPerformed
+        System.out.println("Relatorio Anual");
+    }//GEN-LAST:event_btnCriarRelatorioAnualActionPerformed
+
+    private void btnCriarRelatorioPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarRelatorioPacienteActionPerformed
+        System.out.println("Relatorio Paciente");
+    }//GEN-LAST:event_btnCriarRelatorioPacienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -433,15 +477,15 @@ public class tela_app extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnVoltar;
-    private javax.swing.JButton btnVoltar1;
-    private javax.swing.JButton btnVoltar2;
-    private javax.swing.JButton btnVoltar3;
-    private javax.swing.JButton btnVoltar4;
-    private javax.swing.JButton btnVoltar5;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btnBuscarAgendamento;
+    private javax.swing.JButton btnBuscarConsulta;
+    private javax.swing.JButton btnBuscarPaciente;
+    private javax.swing.JButton btnCadastrarAgendamento;
+    private javax.swing.JButton btnCadastrarConsulta;
+    private javax.swing.JButton btnCadastrarPaciente;
+    private javax.swing.JButton btnCriarRelatorioAnual;
+    private javax.swing.JButton btnCriarRelatorioMensal;
+    private javax.swing.JButton btnCriarRelatorioPaciente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
