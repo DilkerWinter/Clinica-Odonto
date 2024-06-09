@@ -24,6 +24,7 @@ public class tela_cadastro extends javax.swing.JFrame {
     public tela_cadastro() {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -73,7 +74,7 @@ public class tela_cadastro extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(206, 6, 147));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 28)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CADASTRO");
 
@@ -84,7 +85,7 @@ public class tela_cadastro extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jLabel1)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,40 +97,25 @@ public class tela_cadastro extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nome");
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cargo");
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Usuário");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Senha");
 
-        textCadastroNome.setBackground(new java.awt.Color(255, 255, 255));
-        textCadastroNome.setForeground(new java.awt.Color(0, 0, 0));
-
-        textCadastroCargo.setBackground(new java.awt.Color(255, 255, 255));
-        textCadastroCargo.setForeground(new java.awt.Color(0, 0, 0));
         textCadastroCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textCadastroCargoActionPerformed(evt);
             }
         });
-
-        textCadastroUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        textCadastroUsuario.setForeground(new java.awt.Color(0, 0, 0));
-
-        textCadastroSenha.setBackground(new java.awt.Color(255, 255, 255));
-        textCadastroSenha.setForeground(new java.awt.Color(0, 0, 0));
 
         btnVoltar.setBackground(new java.awt.Color(206, 6, 147));
         btnVoltar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -219,7 +205,7 @@ public class tela_cadastro extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -241,7 +227,7 @@ public class tela_cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_textCadastroCargoActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        TelaLogin telalogin = new TelaLogin();
+        tela_login telalogin = new tela_login();
         telalogin.setVisible(true);
         this.dispose();
       

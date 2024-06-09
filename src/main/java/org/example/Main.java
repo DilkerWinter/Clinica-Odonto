@@ -18,7 +18,7 @@ import org.example.Model.Paciente.Endereco.Cidade;
 import org.example.Model.Paciente.Endereco.Endereco;
 import org.example.Model.Paciente.Endereco.Uf;
 import org.example.Model.Paciente.Paciente;
-import org.example.Telas.TelaLogin;
+import org.example.Telas.tela_login;
 
 import java.sql.Date;
 import java.sql.Time;
@@ -27,7 +27,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        TelaLogin telaLogin = new TelaLogin();
+        tela_login telaLogin = new tela_login();
         telaLogin.setVisible(true);
 
 //PACIENTE
