@@ -42,7 +42,7 @@ public class tela_agendamento extends javax.swing.JFrame {
         btnVoltardoAgendamento = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
 
         btnAgendarConsulta.setBackground(new java.awt.Color(255, 255, 255));
         btnAgendarConsulta.setForeground(new java.awt.Color(255, 255, 255));

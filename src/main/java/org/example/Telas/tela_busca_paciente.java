@@ -37,7 +37,7 @@ public class tela_busca_paciente extends javax.swing.JFrame {
         btnBuscarPaciente = new javax.swing.JButton();
         labelBuscaPaciente = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));

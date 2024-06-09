@@ -35,7 +35,7 @@ public class tela_busca_consulta extends javax.swing.JFrame {
         jTextField501 = new javax.swing.JTextField();
         btnBuscarConsulta = new javax.swing.JButton();
 
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
