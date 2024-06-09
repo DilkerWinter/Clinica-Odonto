@@ -49,5 +49,12 @@ public class EnderecoController {
         return enderecoDAO.getTodos();
     }
 
+    public List<Cidade> getAllCidade() {
+        return cidadeDAO.getTodos();
+    }
+
+    public List<Uf> getAllUf(){
+        return ufDAO.getTodos();
+    }
 
 }

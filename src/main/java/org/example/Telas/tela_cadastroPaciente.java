@@ -4,6 +4,19 @@
  */
 package org.example.Telas;
 
+import org.example.Controller.Paciente.ContatoController;
+import org.example.Controller.Paciente.EnderecoController;
+import org.example.Controller.Paciente.PacienteController;
+import org.example.Model.Paciente.Contato.Contato;
+import org.example.Model.Paciente.Contato.TipoContato;
+import org.example.Model.Paciente.Endereco.Cidade;
+import org.example.Model.Paciente.Endereco.Endereco;
+import org.example.Model.Paciente.Endereco.Uf;
+import org.example.Model.Paciente.Paciente;
+
+import java.sql.Date;
+import java.util.List;
+
 /**
  *
  * @author winter
@@ -82,7 +95,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
 
         jLabel3.setText("CPF");
 
-        jLabel4.setText("Data Nascimento");
+        jLabel4.setText("Data Nascimento (YYYY-MM-DD)");
 
         inputDatanascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,17 +107,45 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
 
         jLabel6.setText("Tipo de Contato");
 
-        inputTipoContato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ContatoController contatoController = new ContatoController();
+        List<TipoContato> tipoContatos = contatoController.getAllTiposContatos();
+        String[] arrayTiposContatos = new String[tipoContatos.size()];
+        for (int i = 0; i < tipoContatos.size(); i++) {
+            arrayTiposContatos[i] = tipoContatos.get(i).getTipo();
+        }
+
+        inputTipoContato.setModel(new javax.swing.DefaultComboBoxModel<>(arrayTiposContatos));
 
         jLabel7.setText("Rua");
 
         jLabel8.setText("Cidade");
 
-        boxCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        EnderecoController enderecoController = new EnderecoController();
+        List<Cidade> cidades = enderecoController.getAllCidade();
+        String[] arrayCidades = new String[cidades.size()];
+        for (int i = 0; i < cidades.size(); i++) {
+            arrayCidades[i] = cidades.get(i).getNome();
+        }
+
+        boxCidade.setModel(new javax.swing.DefaultComboBoxModel<>(arrayCidades));
+        boxCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxCidadeActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Estado");
-
-        boxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        List<Uf> ufs = enderecoController.getAllUf();
+        String[] arrayUfs = new String[ufs.size()];
+        for (int i = 0; i < ufs.size(); i++) {
+            arrayUfs[i] = ufs.get(i).getSigla();
+        }
+        boxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(arrayUfs));
+        boxEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxEstadoActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("Numero da Casa");
 
@@ -224,8 +265,78 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_inputNumeroCasaActionPerformed
 
     private void btnCadastroPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPacienteActionPerformed
-        // TODO add your handling code here:
+        if (inputCidade.getText().isEmpty() || inputEstado.getText().isEmpty() || inputRua.getText().isEmpty() ||
+                inputNumeroCasa.getText().isEmpty() || inputNome.getText().isEmpty() || inputCPF.getText().isEmpty() ||
+                inputDatanascimento.getText().isEmpty() || inputContato.getText().isEmpty() || inputTipoContato.getSelectedItem() == null) {
+            System.out.println("Por favor, preencha todos os campos.");
+        } else {
+            PacienteController pacienteController = new PacienteController();
+            EnderecoController enderecoController = new EnderecoController();
+            ContatoController contatoController = new ContatoController();
+
+            Cidade novaCidade = new Cidade();
+            novaCidade.setNome(inputCidade.getText());
+
+            Uf novoUf = new Uf();
+            novoUf.setSigla(inputEstado.getText());
+
+            Endereco novoEndereco = new Endereco();
+            novoEndereco.setRua(inputRua.getText());
+            novoEndereco.setNumero(inputNumeroCasa.getText());
+            novoEndereco.setCidade(novaCidade);
+            novoEndereco.getCidade().setUf(novoUf);
+            enderecoController.addEndereco(novoEndereco);
+
+            Paciente novoPaciente = new Paciente();
+            novoPaciente.setNome(inputNome.getText());
+            novoPaciente.setCpf(inputCPF.getText());
+            novoPaciente.setData_nascimento(Date.valueOf(inputDatanascimento.getText()));
+            novoPaciente.setEndereco(novoEndereco);
+
+            Contato novoContato = new Contato();
+            novoContato.setInformacao(inputContato.getText());
+
+            TipoContato novoTipoContato = new TipoContato();
+            novoTipoContato.setTipo(inputTipoContato.getSelectedItem().toString());
+
+            novoContato.setTipoContato(novoTipoContato);
+            contatoController.addContato(novoContato);
+            novoPaciente.setContato(novoContato);
+
+            pacienteController.addPaciente(novoPaciente);
+        }
+
     }//GEN-LAST:event_btnCadastroPacienteActionPerformed
+
+    private void boxEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEstadoActionPerformed
+        
+        String selectedOption = (String) boxEstado.getSelectedItem();
+
+
+        if (selectedOption.equals(null) || selectedOption.equals("")) {
+            inputEstado.setText("");
+            inputEstado.setEnabled(false);
+        } else {
+            inputEstado.setText(selectedOption);
+            inputEstado.setEnabled(true);
+        }
+
+
+    }//GEN-LAST:event_boxEstadoActionPerformed
+
+    private void boxCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxCidadeActionPerformed
+        String selectedOption = (String) boxCidade.getSelectedItem();
+
+
+        if (selectedOption.equals(null) || selectedOption.equals("")) {
+            inputCidade.setText("");
+            inputCidade.setEnabled(false);
+        } else {
+            inputCidade.setText(selectedOption);
+            inputCidade.setEnabled(true);
+        }
+
+    }//GEN-LAST:event_boxCidadeActionPerformed
 
     
             
