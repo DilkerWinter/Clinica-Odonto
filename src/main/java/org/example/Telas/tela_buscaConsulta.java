@@ -4,16 +4,19 @@
  */
 package org.example.Telas;
 
+import org.example.Controller.Paciente.PacienteController;
+import org.example.Model.Paciente.Paciente;
+
 /**
  *
  * @author clara
  */
-public class tela_busca_agendamento extends javax.swing.JFrame {
+public class tela_buscaConsulta extends javax.swing.JFrame {
 
     /**
-     * Creates new form tela_busca_agendamento
+     * Creates new form tela_busca_consulta
      */
-    public tela_busca_agendamento() {
+    public tela_buscaConsulta() {
         initComponents();
          setLocationRelativeTo(null);
         setResizable(false);
@@ -29,26 +32,31 @@ public class tela_busca_agendamento extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel500 = new javax.swing.JLabel();
-        jTextField500 = new javax.swing.JTextField();
-        btnBuscarAgendamento = new javax.swing.JButton();
+        jLabel501 = new javax.swing.JLabel();
+        jTextField501 = new javax.swing.JTextField();
+        btnBuscarConsulta = new javax.swing.JButton();
 
-
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel500.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel500.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel500.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel500.setText("Informe o CPF do paciente");
+        jLabel501.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel501.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel501.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel501.setText("Informe o CPF do paciente");
 
-        jTextField500.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField500.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField501.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField501.setForeground(new java.awt.Color(0, 0, 0));
 
-        btnBuscarAgendamento.setBackground(new java.awt.Color(206, 6, 147));
-        btnBuscarAgendamento.setForeground(new java.awt.Color(255, 255, 255));
-        btnBuscarAgendamento.setText("Buscar");
+        btnBuscarConsulta.setBackground(new java.awt.Color(206, 6, 147));
+        btnBuscarConsulta.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarConsulta.setText("Buscar");
+        btnBuscarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarConsultaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -60,11 +68,11 @@ public class tela_busca_agendamento extends javax.swing.JFrame {
                     .addGap(161, 161, 161)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel500, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                            .addComponent(jTextField500, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel501, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, Short.MAX_VALUE)
+                            .addComponent(jTextField501, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(60, 60, 60)
-                            .addComponent(btnBuscarAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnBuscarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap(161, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -73,11 +81,11 @@ public class tela_busca_agendamento extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(11, 11, 11)
-                    .addComponent(jLabel500, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel501, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jTextField500, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField501, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(38, 38, 38)
-                    .addComponent(btnBuscarAgendamento, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(11, Short.MAX_VALUE)))
         );
 
@@ -94,6 +102,15 @@ public class tela_busca_agendamento extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarConsultaActionPerformed
+        PacienteController pacienteController = new PacienteController();
+
+        Paciente paciente = pacienteController.getPacientePorCPF(jTextField501.getText());
+
+
+
+    }//GEN-LAST:event_btnBuscarConsultaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -112,28 +129,28 @@ public class tela_busca_agendamento extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(tela_busca_agendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_buscaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(tela_busca_agendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_buscaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(tela_busca_agendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_buscaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(tela_busca_agendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_buscaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new tela_busca_agendamento().setVisible(true);
+                new tela_buscaConsulta().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscarAgendamento;
-    private javax.swing.JLabel jLabel500;
+    private javax.swing.JButton btnBuscarConsulta;
+    private javax.swing.JLabel jLabel501;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField500;
+    private javax.swing.JTextField jTextField501;
     // End of variables declaration//GEN-END:variables
 }

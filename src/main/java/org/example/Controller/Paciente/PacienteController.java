@@ -29,4 +29,12 @@ public class PacienteController {
         return pacienteDAO.getTodos();
     }
 
+    public Paciente getPacientePorNome(String nome) {
+        return pacienteDAO.getByNome(nome);
+    }
+
+    public Paciente getPacientePorCPF(String cpf) {
+        return pacienteDAO.getByCpf(cpf);
+    }
+
 }

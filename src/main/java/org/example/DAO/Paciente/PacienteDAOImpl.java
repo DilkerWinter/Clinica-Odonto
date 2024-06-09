@@ -55,4 +55,18 @@ public class PacienteDAOImpl implements DAO<Paciente> {
         entityManager.close();
         return pacientes;
     }
+
+    public Paciente getByNome(String nome) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Paciente paciente = entityManager.find(Paciente.class, nome);
+        entityManager.close();
+        return paciente;
+    }
+
+    public Paciente getByCpf(String cpf){
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Paciente paciente = entityManager.find(Paciente.class, cpf);
+        entityManager.close();
+        return paciente;
+    }
 }

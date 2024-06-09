@@ -390,13 +390,13 @@ public class tela_app extends javax.swing.JFrame {
 
     private void btnBuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPacienteActionPerformed
         System.out.println("Buscar Paciente");
-        tela_busca_paciente telaBP = new tela_busca_paciente();
+        tela_buscaPaciente telaBP = new tela_buscaPaciente();
         telaBP.setVisible(true);
     }//GEN-LAST:event_btnBuscarPacienteActionPerformed
 
     private void btnBuscarAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAgendamentoActionPerformed
         System.out.println("Buscar Agendamento");
-         tela_busca_agendamento telaBA = new tela_busca_agendamento();
+         tela_buscaAgendamento telaBA = new tela_buscaAgendamento();
         telaBA.setVisible(true);
     }//GEN-LAST:event_btnBuscarAgendamentoActionPerformed
 
@@ -409,7 +409,7 @@ public class tela_app extends javax.swing.JFrame {
 
     private void btnBuscarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarConsultaActionPerformed
         System.out.println("Buscar Consulta");
-         tela_busca_consulta telaBC = new tela_busca_consulta();
+         tela_buscaConsulta telaBC = new tela_buscaConsulta();
         telaBC.setVisible(true);
     }//GEN-LAST:event_btnBuscarConsultaActionPerformed
 

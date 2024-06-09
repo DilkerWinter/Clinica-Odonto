@@ -4,18 +4,19 @@
  */
 package org.example.Telas;
 
-import javax.swing.*;
+import org.example.Controller.Paciente.PacienteController;
+import org.example.Model.Paciente.Paciente;
 
 /**
  *
  * @author clara
  */
-public class tela_busca_paciente extends javax.swing.JFrame {
+public class tela_buscaPaciente extends javax.swing.JFrame {
 
     /**
      * Creates new form tela_busca_paciente
      */
-    public tela_busca_paciente() {
+    public tela_buscaPaciente() {
         initComponents();
          setLocationRelativeTo(null);
         setResizable(false);
@@ -37,7 +38,7 @@ public class tela_busca_paciente extends javax.swing.JFrame {
         btnBuscarPaciente = new javax.swing.JButton();
         labelBuscaPaciente = new javax.swing.JLabel();
 
-
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -49,10 +50,20 @@ public class tela_busca_paciente extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         btnBuscarPaciente.setBackground(new java.awt.Color(206, 6, 147));
         btnBuscarPaciente.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscarPaciente.setText("Buscar");
+        btnBuscarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarPacienteActionPerformed(evt);
+            }
+        });
 
         labelBuscaPaciente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -65,7 +76,7 @@ public class tela_busca_paciente extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(159, 159, 159)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, Short.MAX_VALUE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelBuscaPaciente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -112,6 +123,21 @@ public class tela_busca_paciente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void btnBuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPacienteActionPerformed
+        PacienteController pacienteController = new PacienteController();
+
+        Paciente paciente = pacienteController.getPacientePorCPF(jTextField1.getText());
+
+
+
+//        tela_resultPaciente resultpaciente = new tela_resultPaciente();
+//        resultpaciente.mostrarpaciente(paciente);
+    }//GEN-LAST:event_btnBuscarPacienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -129,20 +155,20 @@ public class tela_busca_paciente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(tela_busca_paciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_buscaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(tela_busca_paciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_buscaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(tela_busca_paciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_buscaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(tela_busca_paciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tela_buscaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new tela_busca_paciente().setVisible(true);
+                new tela_buscaPaciente().setVisible(true);
             }
         });
     }
