@@ -139,7 +139,15 @@ public class tela_cadastro extends javax.swing.JFrame {
 
         boxItem.setBackground(new java.awt.Color(206, 6, 147));
         boxItem.setForeground(new java.awt.Color(255, 255, 255));
-        boxItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionário", "Dentista" }));
+        FuncionarioController funcionarioController = new FuncionarioController();
+        List<Cargo> cargos = funcionarioController.getAllCargos();
+        String[] arrayCargos = new String[cargos.size()];
+
+        for (int i = 0; i < cargos.size(); i++) {
+            arrayCargos[i] = cargos.get(i).getCargo();
+        }
+
+        boxItem.setModel(new javax.swing.DefaultComboBoxModel<>(arrayCargos));
         boxItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxItemActionPerformed(evt);

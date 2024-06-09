@@ -4,6 +4,20 @@
  */
 package org.example.Telas;
 
+import org.example.Controller.Paciente.ContatoController;
+import org.example.Controller.Paciente.EnderecoController;
+import org.example.Controller.Paciente.PacienteController;
+import org.example.Model.Paciente.Contato.Contato;
+import org.example.Model.Paciente.Contato.TipoContato;
+import org.example.Model.Paciente.Endereco.Cidade;
+import org.example.Model.Paciente.Endereco.Endereco;
+import org.example.Model.Paciente.Endereco.Uf;
+import org.example.Model.Paciente.Paciente;
+
+import javax.swing.*;
+import java.sql.Date;
+import java.util.List;
+
 /**
  *
  * @author winter
@@ -15,6 +29,8 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
      */
     public tela_cadastroPaciente() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -29,12 +45,28 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        inputNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        inputCPF = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        inputDatanascimento = new javax.swing.JTextField();
+        inputContato = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        inputTipoContato = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        inputRua = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        inputCidade = new javax.swing.JTextField();
+        boxCidade = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        inputEstado = new javax.swing.JTextField();
+        boxEstado = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        inputNumeroCasa = new javax.swing.JTextField();
+        btnCadastroPaciente = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Nome");
 
@@ -52,7 +84,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addComponent(jLabel2)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -62,13 +94,74 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jTextField1.setText("jTextField1");
-
         jLabel3.setText("CPF");
 
-        jTextField2.setText("jTextField2");
+        jLabel4.setText("Data Nascimento (YYYY-MM-DD)");
 
-        jLabel4.setText("jLabel4");
+        inputDatanascimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputDatanascimentoActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Contato");
+
+        jLabel6.setText("Tipo de Contato");
+
+        ContatoController contatoController = new ContatoController();
+        List<TipoContato> tipoContatos = contatoController.getAllTiposContatos();
+        String[] arrayTiposContatos = new String[tipoContatos.size()];
+        for (int i = 0; i < tipoContatos.size(); i++) {
+            arrayTiposContatos[i] = tipoContatos.get(i).getTipo();
+        }
+
+        inputTipoContato.setModel(new javax.swing.DefaultComboBoxModel<>(arrayTiposContatos));
+
+        jLabel7.setText("Rua");
+
+        jLabel8.setText("Cidade");
+
+        EnderecoController enderecoController = new EnderecoController();
+        List<Cidade> cidades = enderecoController.getAllCidade();
+        String[] arrayCidades = new String[cidades.size()];
+        for (int i = 0; i < cidades.size(); i++) {
+            arrayCidades[i] = cidades.get(i).getNome();
+        }
+
+        boxCidade.setModel(new javax.swing.DefaultComboBoxModel<>(arrayCidades));
+        boxCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxCidadeActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Estado");
+        List<Uf> ufs = enderecoController.getAllUf();
+        String[] arrayUfs = new String[ufs.size()];
+        for (int i = 0; i < ufs.size(); i++) {
+            arrayUfs[i] = ufs.get(i).getSigla();
+        }
+        boxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(arrayUfs));
+        boxEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxEstadoActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Numero da Casa");
+
+        inputNumeroCasa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputNumeroCasaActionPerformed(evt);
+            }
+        });
+
+        btnCadastroPaciente.setText("Cadastrar Paciente");
+        btnCadastroPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroPacienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,14 +170,42 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(156, 156, 156))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(inputNumeroCasa, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel8)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(inputNome, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(inputCPF, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inputCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(boxCidade, 0, 124, Short.MAX_VALUE))
+                                    .addComponent(inputRua, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel9)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(inputEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(boxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(inputTipoContato, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(inputContato)
+                                .addComponent(inputDatanascimento))
+                            .addComponent(btnCadastroPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,17 +216,133 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputDatanascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(256, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputTipoContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputNumeroCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastroPaciente))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void inputDatanascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDatanascimentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputDatanascimentoActionPerformed
+
+    private void inputNumeroCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumeroCasaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputNumeroCasaActionPerformed
+
+    private void btnCadastroPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPacienteActionPerformed
+        if (inputCidade.getText().isEmpty() || inputEstado.getText().isEmpty() || inputRua.getText().isEmpty() ||
+                inputNumeroCasa.getText().isEmpty() || inputNome.getText().isEmpty() || inputCPF.getText().isEmpty() ||
+                inputDatanascimento.getText().isEmpty() || inputContato.getText().isEmpty() || inputTipoContato.getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
+        } else {
+            PacienteController pacienteController = new PacienteController();
+            EnderecoController enderecoController = new EnderecoController();
+            ContatoController contatoController = new ContatoController();
+
+            Cidade novaCidade = new Cidade();
+            novaCidade.setNome(inputCidade.getText());
+
+            Uf novoUf = new Uf();
+            novoUf.setSigla(inputEstado.getText());
+
+            Endereco novoEndereco = new Endereco();
+            novoEndereco.setRua(inputRua.getText());
+            novoEndereco.setNumero(inputNumeroCasa.getText());
+            novoEndereco.setCidade(novaCidade);
+            novoEndereco.getCidade().setUf(novoUf);
+            enderecoController.addEndereco(novoEndereco);
+
+            Paciente novoPaciente = new Paciente();
+            novoPaciente.setNome(inputNome.getText());
+            novoPaciente.setCpf(inputCPF.getText());
+            novoPaciente.setData_nascimento(Date.valueOf(inputDatanascimento.getText()));
+            novoPaciente.setEndereco(novoEndereco);
+
+            Contato novoContato = new Contato();
+            novoContato.setInformacao(inputContato.getText());
+
+            TipoContato novoTipoContato = new TipoContato();
+            novoTipoContato.setTipo(inputTipoContato.getSelectedItem().toString());
+
+            novoContato.setTipoContato(novoTipoContato);
+            contatoController.addContato(novoContato);
+            novoPaciente.setContato(novoContato);
+
+            pacienteController.addPaciente(novoPaciente);
+            this.dispose();
+        }
+
+    }//GEN-LAST:event_btnCadastroPacienteActionPerformed
+
+    private void boxEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEstadoActionPerformed
+        
+        String selectedOption = (String) boxEstado.getSelectedItem();
+
+
+        if (selectedOption.equals(null) || selectedOption.equals("")) {
+            inputEstado.setText("");
+            inputEstado.setEnabled(false);
+        } else {
+            inputEstado.setText(selectedOption);
+            inputEstado.setEnabled(true);
+        }
+
+
+    }//GEN-LAST:event_boxEstadoActionPerformed
+
+    private void boxCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxCidadeActionPerformed
+        String selectedOption = (String) boxCidade.getSelectedItem();
+
+
+        if (selectedOption.equals(null) || selectedOption.equals("")) {
+            inputCidade.setText("");
+            inputCidade.setEnabled(false);
+        } else {
+            inputCidade.setText(selectedOption);
+            inputCidade.setEnabled(true);
+        }
+
+    }//GEN-LAST:event_boxCidadeActionPerformed
+
+    
+            
+            
     /**
      * @param args the command line arguments
      */
@@ -142,12 +379,28 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> boxCidade;
+    private javax.swing.JComboBox<String> boxEstado;
+    private javax.swing.JButton btnCadastroPaciente;
+    private javax.swing.JTextField inputCPF;
+    private javax.swing.JTextField inputCidade;
+    private javax.swing.JTextField inputContato;
+    private javax.swing.JTextField inputDatanascimento;
+    private javax.swing.JTextField inputEstado;
+    private javax.swing.JTextField inputNome;
+    private javax.swing.JTextField inputNumeroCasa;
+    private javax.swing.JTextField inputRua;
+    private javax.swing.JComboBox<String> inputTipoContato;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

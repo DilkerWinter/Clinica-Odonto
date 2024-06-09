@@ -407,6 +407,8 @@ public class tela_app extends javax.swing.JFrame {
 
     private void btnCadastrarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarPacienteActionPerformed
         System.out.println("Cadastrar Paciente");
+        tela_cadastroPaciente telaCadastroPaciente = new tela_cadastroPaciente();
+        telaCadastroPaciente.setVisible(true);
     }//GEN-LAST:event_btnCadastrarPacienteActionPerformed
 
     private void btnBuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPacienteActionPerformed

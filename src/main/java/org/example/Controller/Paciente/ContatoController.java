@@ -39,5 +39,8 @@ public class ContatoController {
         return contatoDAO.getTodos();
     }
 
+    public List<TipoContato> getAllTiposContatos() {
+        return tipoContatoDAO.getTodos();
+    }
 
 }
