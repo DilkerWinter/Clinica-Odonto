@@ -14,6 +14,7 @@ import org.example.Model.Paciente.Endereco.Endereco;
 import org.example.Model.Paciente.Endereco.Uf;
 import org.example.Model.Paciente.Paciente;
 
+import javax.swing.*;
 import java.sql.Date;
 import java.util.List;
 
@@ -65,7 +66,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
         inputNumeroCasa = new javax.swing.JTextField();
         btnCadastroPaciente = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Nome");
 
@@ -268,7 +269,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
         if (inputCidade.getText().isEmpty() || inputEstado.getText().isEmpty() || inputRua.getText().isEmpty() ||
                 inputNumeroCasa.getText().isEmpty() || inputNome.getText().isEmpty() || inputCPF.getText().isEmpty() ||
                 inputDatanascimento.getText().isEmpty() || inputContato.getText().isEmpty() || inputTipoContato.getSelectedItem() == null) {
-            System.out.println("Por favor, preencha todos os campos.");
+            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
         } else {
             PacienteController pacienteController = new PacienteController();
             EnderecoController enderecoController = new EnderecoController();
@@ -304,6 +305,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
             novoPaciente.setContato(novoContato);
 
             pacienteController.addPaciente(novoPaciente);
+            this.dispose();
         }
 
     }//GEN-LAST:event_btnCadastroPacienteActionPerformed
