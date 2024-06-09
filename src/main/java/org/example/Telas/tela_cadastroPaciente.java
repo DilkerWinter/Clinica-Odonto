@@ -67,7 +67,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
         btnCadastroPaciente = new javax.swing.JButton();
         inputTipoContato = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
 
         jLabel1.setText("Nome");
 
