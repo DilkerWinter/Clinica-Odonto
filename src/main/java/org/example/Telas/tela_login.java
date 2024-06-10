@@ -5,11 +5,11 @@
 package org.example.Telas;
 
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 import org.example.Controller.Funcionario.FuncionarioController;
 import org.example.Model.Funcionario.Funcionario;
 import org.example.Model.Funcionario.Login;
+import org.example.Telas.Cadastro.tela_cadastro;
 
 /**
  *

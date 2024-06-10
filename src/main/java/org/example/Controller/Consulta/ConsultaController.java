@@ -10,6 +10,9 @@ import org.example.Model.Paciente.Contato.Contato;
 import org.example.Model.Paciente.Contato.TipoContato;
 import org.example.Model.Paciente.Paciente;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ConsultaController {
@@ -49,5 +52,18 @@ public class ConsultaController {
 
     public List<FormaPagamento> getAllFormaPagamentos() {
         return formaPagamentoDAO.getTodos();
+    }
+
+    private static final String URL = "jdbc:postgresql://localhost:5432/desk_p2";
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "123";
+
+    public Connection getConnection() {
+        try {
+            return DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Erro ao conectar com o banco de dados", e);
+        }
     }
 }

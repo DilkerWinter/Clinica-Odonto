@@ -2,12 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package org.example.Telas;
+package org.example.Telas.Buscar;
 
 import org.example.Controller.Paciente.PacienteController;
 import org.example.Model.Paciente.Paciente;
-
-import javax.swing.*;
+import org.example.Telas.Results.tela_resultPaciente;
 
 /**
  *

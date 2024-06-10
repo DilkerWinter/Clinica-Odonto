@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package org.example.Telas;
+package org.example.Telas.Cadastro;
 
 import org.example.Controller.Consulta.AgendamentoController;
 import org.example.Controller.Funcionario.FuncionarioController;
@@ -10,6 +10,7 @@ import org.example.Controller.Paciente.PacienteController;
 import org.example.Model.Consulta.Agendamento;
 import org.example.Model.Funcionario.Funcionario;
 import org.example.Model.Paciente.Paciente;
+import org.example.Telas.tela_app;
 
 import javax.swing.*;
 import java.sql.Date;

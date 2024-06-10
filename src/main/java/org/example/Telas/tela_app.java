@@ -4,6 +4,21 @@
  */
 package org.example.Telas;
 
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
+import org.example.Controller.Consulta.ConsultaController;
+import org.example.Telas.Buscar.tela_buscaAgendamento;
+import org.example.Telas.Buscar.tela_buscaConsulta;
+import org.example.Telas.Buscar.tela_buscaPaciente;
+import org.example.Telas.Cadastro.tela_cadastroAgendamento;
+import org.example.Telas.Cadastro.tela_cadastroConsulta;
+import org.example.Telas.Cadastro.tela_cadastroPaciente;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.HashMap;
+
 /**
  *
  * @author winter
@@ -420,7 +435,35 @@ public class tela_app extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarConsultaActionPerformed
 
     private void btnCriarRelatorioMensalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarRelatorioMensalActionPerformed
-        System.out.println("Relatorio Mensal");
+        HashMap<String, Object> parametros = new HashMap<>();
+        ConsultaController consultaController = new ConsultaController();
+
+        Connection conn = null;
+        try {
+            // Obtém a conexão do banco de dados através do ConsultaController
+            conn = consultaController.getConnection();
+
+            // Compila o arquivo .jrxml para .jasper (se ainda não compilado)
+            JasperReport jr = JasperCompileManager.compileReport(getClass().getResourceAsStream("/Relatorios/RelatorioGeralClinica.jrxml"));
+
+            // Preenche o relatório com dados do banco de dados
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jr, parametros, conn);
+
+            // Exibe o relatório
+            JasperViewer viewer = new JasperViewer(jasperPrint, false);
+            viewer.setVisible(true);
+
+        } catch (JRException ex) {
+            ex.printStackTrace();
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
     }//GEN-LAST:event_btnCriarRelatorioMensalActionPerformed
 
     private void btnCriarRelatorioPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarRelatorioPacienteActionPerformed

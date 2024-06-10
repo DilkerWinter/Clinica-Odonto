@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package org.example.Telas;
+package org.example.Telas.Cadastro;
 
 import org.example.Controller.Consulta.ConsultaController;
 import org.example.Controller.Funcionario.FuncionarioController;

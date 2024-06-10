@@ -7,6 +7,7 @@ import org.example.Model.Paciente.Paciente;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.sql.Connection;
 import java.util.List;
 
 public class ConsultaDAOImpl implements DAO<Consulta> {
