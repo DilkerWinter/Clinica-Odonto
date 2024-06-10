@@ -3,9 +3,7 @@ package org.example.DAO.Paciente;
 import org.example.DAO.DAO;
 import org.example.Model.Paciente.Paciente;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import java.util.List;
 
 public class PacienteDAOImpl implements DAO<Paciente> {
@@ -65,8 +63,15 @@ public class PacienteDAOImpl implements DAO<Paciente> {
 
     public Paciente getByCpf(String cpf){
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        Paciente paciente = entityManager.find(Paciente.class, cpf);
-        entityManager.close();
-        return paciente;
+        try {
+            TypedQuery<Paciente> query = entityManager.createQuery("SELECT p FROM Paciente p WHERE p.cpf = :cpf", Paciente.class);
+            query.setParameter("cpf", cpf);
+            Paciente paciente = query.getSingleResult();
+            return paciente;
+        } catch (NoResultException e) {
+            return null;
+        } finally {
+            entityManager.close();
+        }
     }
 }

@@ -7,6 +7,8 @@ package org.example.Telas;
 import org.example.Controller.Paciente.PacienteController;
 import org.example.Model.Paciente.Paciente;
 
+import javax.swing.*;
+
 /**
  *
  * @author clara
@@ -38,7 +40,7 @@ public class tela_buscaPaciente extends javax.swing.JFrame {
         btnBuscarPaciente = new javax.swing.JButton();
         labelBuscaPaciente = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -132,7 +134,10 @@ public class tela_buscaPaciente extends javax.swing.JFrame {
 
         Paciente paciente = pacienteController.getPacientePorCPF(jTextField1.getText());
 
-
+        tela_resultPaciente telaPaciente = new tela_resultPaciente();
+        telaPaciente.mostrarPaciente(paciente);
+        telaPaciente.setVisible(true);
+        this.dispose();
 
 //        tela_resultPaciente resultpaciente = new tela_resultPaciente();
 //        resultpaciente.mostrarpaciente(paciente);
