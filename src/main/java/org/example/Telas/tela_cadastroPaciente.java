@@ -276,7 +276,7 @@ public class tela_cadastroPaciente extends javax.swing.JFrame {
     private void btnCadastroPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPacienteActionPerformed
         if (inputCidade.getText().isEmpty() || inputEstado.getText().isEmpty() || inputRua.getText().isEmpty() ||
                 inputNumeroCasa.getText().isEmpty() || inputNome.getText().isEmpty() || inputCPF.getText().isEmpty() ||
-                inputDatanascimento.getText().isEmpty() || inputContato.getText().isEmpty() || boxTipoContato.getSelectedItem() == null || inputTipoContato.getText().isEmpty()) {
+                inputDatanascimento.getText().isEmpty() || inputContato.getText().isEmpty() || inputTipoContato.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
         } else {
             PacienteController pacienteController = new PacienteController();
