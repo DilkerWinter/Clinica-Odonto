@@ -54,4 +54,8 @@ public class FuncionarioController {
     public List<Cargo> getAllCargos(){
         return cargoDAO.getTodos();
     }
+
+    public Funcionario getByUsuario(String usuario) {
+        return funcionarioDAO.getByUsuario(usuario);
+    }
 }

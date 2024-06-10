@@ -3,12 +3,10 @@ package org.example.DAO.Funcionario;
 import org.example.DAO.DAO;
 import org.example.Model.Funcionario.Funcionario;
 import org.example.Model.Funcionario.Login;
+import org.example.Model.Paciente.Paciente;
 import org.example.Service.PasswordEncrypt;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.NoResultException;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import java.util.List;
 
 public class FuncionarioDAOImpl implements DAO<Funcionario> {
@@ -75,5 +73,19 @@ public class FuncionarioDAOImpl implements DAO<Funcionario> {
         } catch (NoResultException e) {
         }
         return null;
+    }
+
+    public Funcionario getByUsuario(String usuario) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            TypedQuery<Funcionario> query = entityManager.createQuery("SELECT f FROM Funcionario f WHERE f.usuario = :usuario", Funcionario.class);
+            query.setParameter("usuario", usuario);
+            Funcionario funcionario = query.getSingleResult();
+            return funcionario;
+        } catch (NoResultException e) {
+            return null;
+        } finally {
+            entityManager.close();
+        }
     }
 }

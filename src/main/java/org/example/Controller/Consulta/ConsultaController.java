@@ -46,4 +46,8 @@ public class ConsultaController {
     public List<Consulta> getConsultasPorPaciente(Paciente paciente) {
         return consultaDAO.getConsultaPorPaciente(paciente);
     }
+
+    public List<FormaPagamento> getAllFormaPagamentos() {
+        return formaPagamentoDAO.getTodos();
+    }
 }

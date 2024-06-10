@@ -402,7 +402,7 @@ public class tela_app extends javax.swing.JFrame {
 
     private void btnCadastrarAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarAgendamentoActionPerformed
         System.out.println("Cadastrar Agendamento");
-        tela_agendamento telaagendamento = new tela_agendamento();
+        tela_cadastroAgendamento telaagendamento = new tela_cadastroAgendamento();
         telaagendamento.setVisible(true);
         
     }//GEN-LAST:event_btnCadastrarAgendamentoActionPerformed
@@ -415,7 +415,7 @@ public class tela_app extends javax.swing.JFrame {
 
     private void btnCadastrarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarConsultaActionPerformed
         System.out.println("Cadastrar Consulta");
-        tela_consulta telaconsulta = new tela_consulta();
+        tela_cadastroConsulta telaconsulta = new tela_cadastroConsulta();
         telaconsulta.setVisible(true);
     }//GEN-LAST:event_btnCadastrarConsultaActionPerformed
 
