@@ -4,8 +4,12 @@
  */
 package org.example.Telas;
 
+import org.example.Controller.Consulta.ConsultaController;
 import org.example.Controller.Paciente.PacienteController;
+import org.example.Model.Consulta.Consulta;
 import org.example.Model.Paciente.Paciente;
+
+import java.util.List;
 
 /**
  *
@@ -107,6 +111,12 @@ public class tela_buscaConsulta extends javax.swing.JFrame {
 
         Paciente paciente = pacienteController.getPacientePorCPF(jTextField501.getText());
 
+        ConsultaController consultaController = new ConsultaController();
+        List<Consulta> Consultas = consultaController.getConsultasPorPaciente(paciente);
+        tela_resultConsultas resultConsultas = new tela_resultConsultas();
+        resultConsultas.setVisible(true);
+        resultConsultas.mostrarConsultas(Consultas);
+        this.dispose();
 
 
     }//GEN-LAST:event_btnBuscarConsultaActionPerformed

@@ -179,7 +179,7 @@ public class tela_cadastroConsulta extends javax.swing.JFrame {
         inputProntuario.setRows(5);
         jScrollPane1.setViewportView(inputProntuario);
 
-        inputObservacao.setEditable(true);
+        inputObservacao.setEditable(false);
         inputObservacao.setBackground(new java.awt.Color(255, 255, 255));
         inputObservacao.setColumns(20);
         inputObservacao.setForeground(new java.awt.Color(0, 0, 0));
@@ -214,7 +214,7 @@ public class tela_cadastroConsulta extends javax.swing.JFrame {
                                 .addComponent(boxFormaPgt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(inputValor)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(32, 32, 32))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
