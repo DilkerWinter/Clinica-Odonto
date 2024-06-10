@@ -4,6 +4,12 @@
  */
 package org.example.Telas;
 
+import java.awt.Dimension;
+import java.util.List;
+import javax.swing.*;
+
+import org.example.Model.Consulta.Agendamento;
+
 /**
  *
  * @author winter
@@ -15,6 +21,8 @@ public class tela_resultAgendamento extends javax.swing.JFrame {
      */
     public tela_resultAgendamento() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -26,22 +34,72 @@ public class tela_resultAgendamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(206, 6, 147));
+
+        jLabel1.setFont(new java.awt.Font("Poppins", 0, 28)); // NOI18N
+        jLabel1.setText("Agendamento");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(99, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap(98, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(25, 25, 25))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void mostrarAgendamentos(List<Agendamento> agendamentos){
+        jScrollPane1.setViewportView(null);
+
+        JPanel painelAgendamentos = new JPanel();
+        painelAgendamentos.setLayout(new BoxLayout(painelAgendamentos, BoxLayout.Y_AXIS));
+
+        for (Agendamento agendamento : agendamentos){
+            painel_Agendamentos painelAgendamento = new painel_Agendamentos();
+            painelAgendamento.setLayout(new BoxLayout(painelAgendamento, BoxLayout.Y_AXIS));
+            painelAgendamento.preencherCampos(agendamento);
+            painelAgendamento.setMaximumSize(new Dimension(Integer.MAX_VALUE, painelAgendamento.getPreferredSize().height));
+            painelAgendamentos.add(painelAgendamento);
+        }
+
+        jScrollPane1.setViewportView(painelAgendamentos);
+        jScrollPane1.revalidate();
+        jScrollPane1.repaint();
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -78,5 +136,8 @@ public class tela_resultAgendamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

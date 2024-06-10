@@ -4,7 +4,10 @@
  */
 package org.example.Telas;
 
+import java.util.List;
+import org.example.Controller.Consulta.AgendamentoController;
 import org.example.Controller.Paciente.PacienteController;
+import org.example.Model.Consulta.Agendamento;
 import org.example.Model.Paciente.Paciente;
 
 /**
@@ -19,7 +22,7 @@ public class tela_buscaAgendamento extends javax.swing.JFrame {
     public tela_buscaAgendamento() {
         initComponents();
          setLocationRelativeTo(null);
-        setResizable(false);
+         setResizable(false);
     }
 
     /**
@@ -108,7 +111,12 @@ public class tela_buscaAgendamento extends javax.swing.JFrame {
         Paciente paciente = pacienteController.getPacientePorCPF(jTextField500.getText());
 
 
-
+        AgendamentoController agendamentoController = new AgendamentoController();
+        List<Agendamento> agendamentos = agendamentoController.getAgendamentosPorPaciente(paciente);
+        tela_resultAgendamento resultAgendamento = new tela_resultAgendamento();
+        resultAgendamento.setVisible(true);
+        resultAgendamento.mostrarAgendamentos(agendamentos);
+        this.dispose();
 
     }//GEN-LAST:event_btnBuscarAgendamentoActionPerformed
 

@@ -21,6 +21,8 @@ public class tela_resultConsultas extends javax.swing.JFrame {
      */
     public tela_resultConsultas() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
 
     }
 
