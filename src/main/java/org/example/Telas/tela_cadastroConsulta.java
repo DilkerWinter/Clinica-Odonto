@@ -179,7 +179,7 @@ public class tela_cadastroConsulta extends javax.swing.JFrame {
         inputProntuario.setRows(5);
         jScrollPane1.setViewportView(inputProntuario);
 
-        inputObservacao.setEditable(false);
+        inputObservacao.setEditable(true);
         inputObservacao.setBackground(new java.awt.Color(255, 255, 255));
         inputObservacao.setColumns(20);
         inputObservacao.setForeground(new java.awt.Color(0, 0, 0));
