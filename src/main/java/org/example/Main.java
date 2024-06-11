@@ -30,6 +30,5 @@ public class Main {
         tela_login telaLogin = new tela_login();
         telaLogin.setVisible(true);
 
-
     }
 }

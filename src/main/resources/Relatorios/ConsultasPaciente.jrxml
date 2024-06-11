@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ConsultasPaciente" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4c74c884-f5e6-4a69-873f-ef6208481e50">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT p.nome AS nome_paciente,
+       c.observacao AS observacao_consulta,
+       c.valor AS valor_consulta,
+       c.formapagamento AS formapagamento_consulta,
+       f.nome AS nome_funcionario,
+       f.cargo AS cargo_funcionario
+FROM consulta c
+JOIN paciente p ON c.paciente_id = p.id
+JOIN funcionario f ON c.funcionario_id = f.id
+WHERE c.paciente_id = 18]]>
+	</queryString>
+	<field name="nome_paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_paciente"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="observacao_consulta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="observacao_consulta"/>
+		<property name="com.jaspersoft.studio.field.label" value="observacao_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="valor_consulta" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="valor_consulta"/>
+		<property name="com.jaspersoft.studio.field.label" value="valor_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="formapagamento_consulta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="formapagamento_consulta"/>
+		<property name="com.jaspersoft.studio.field.label" value="formapagamento_consulta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="consulta"/>
+	</field>
+	<field name="nome_funcionario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_funcionario"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_funcionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="funcionario"/>
+	</field>
+	<field name="cargo_funcionario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cargo_funcionario"/>
+		<property name="com.jaspersoft.studio.field.label" value="cargo_funcionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="funcionario"/>
+	</field>
+	<variable name="valor_consulta1" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{valor_consulta}]]></variableExpression>
+	</variable>
+	<variable name="valor_consulta2" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{valor_consulta}]]></variableExpression>
+	</variable>
+	<variable name="valor_consulta3" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{valor_consulta}]]></variableExpression>
+	</variable>
+	<variable name="valor_consulta4" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{valor_consulta}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="10" width="140" height="63" uuid="a092f7b3-ea1d-4afc-997d-183739416f97"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Relatorio do ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="10" width="340" height="63" uuid="6400897d-29ce-4818-87df-d2a9012c25da"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_paciente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="77" y="9" width="400" height="30" uuid="8c3fef41-5583-4847-8e08-c626bfd01b6f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Relatorio do Paciente mostrando todas as consultas do mesmo e valor final]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="65" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="50" height="21" uuid="1e47a028-c8e8-4ff8-8b45-88e335ac6430"/>
+				<text><![CDATA[Valor: R$]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="2" width="100" height="21" uuid="5ba0d0a1-77dc-4682-936c-583b18884832">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69bdd1fa-fb8c-4232-b3d3-3af10b8898fe"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{valor_consulta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="113" height="15" uuid="bdfdd1f9-63cc-4f6e-9d0b-b2328039ec5a"/>
+				<text><![CDATA[Forma de Pagamento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="113" y="30" width="170" height="15" uuid="76a70abc-904e-4501-8e25-08785a659b13">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="828a7640-7166-4843-a3d1-6670d2a3441c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{formapagamento_consulta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="330" y="2" width="65" height="16" uuid="0279548b-c48f-499b-9c33-8dbecc8dd2f0"/>
+				<text><![CDATA[Funcionario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="395" y="2" width="115" height="16" uuid="d44e98e8-6ff8-4184-a7f2-d4b660f1d3bb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06084bc0-d0f1-4958-bec7-8760ac98c9d6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome_funcionario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="330" y="30" width="97" height="15" uuid="7dbf5ae5-b253-4f6f-a0d7-6535a2e42632"/>
+				<text><![CDATA[Cargo Funcionario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="427" y="30" width="133" height="15" uuid="0601ede8-786f-4d6a-9e57-8779095e592e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5d99260c-00fe-4e40-9dbb-0690a7c939d8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cargo_funcionario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="70" width="70" height="20" uuid="ce2368ce-1778-4140-a93c-5a20acbc44f1"/>
+				<text><![CDATA[Observacao:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="70" width="450" height="20" uuid="89947880-491e-4f1e-9380-68885896b4a4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc1aee8f-1194-4c4a-aa70-2e303043f5f6"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{observacao_consulta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="40" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="0" width="130" height="21" uuid="e020cd90-85db-40f9-95aa-329a68ff20ae"/>
+				<text><![CDATA[Valor total das consultas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="30" width="100" height="18" uuid="192e1d05-1608-46ba-a870-c8f8357ea3a5"/>
+				<text><![CDATA[Total de consultas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="0" width="130" height="20" uuid="c5a805a1-316f-4b9a-a0d7-bc42b488a0a5"/>
+				<textFieldExpression><![CDATA[$V{valor_consulta3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="30" width="150" height="18" uuid="e9a150d3-c6a6-4b70-ae42-97678844edec"/>
+				<textFieldExpression><![CDATA[$V{valor_consulta4}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

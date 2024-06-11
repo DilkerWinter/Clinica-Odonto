@@ -440,16 +440,12 @@ public class tela_app extends javax.swing.JFrame {
 
         Connection conn = null;
         try {
-            // Obtém a conexão do banco de dados através do ConsultaController
             conn = consultaController.getConnection();
 
-            // Compila o arquivo .jrxml para .jasper (se ainda não compilado)
             JasperReport jr = JasperCompileManager.compileReport(getClass().getResourceAsStream("/Relatorios/RelatorioGeralClinica.jrxml"));
 
-            // Preenche o relatório com dados do banco de dados
             JasperPrint jasperPrint = JasperFillManager.fillReport(jr, parametros, conn);
 
-            // Exibe o relatório
             JasperViewer viewer = new JasperViewer(jasperPrint, false);
             viewer.setVisible(true);
 
@@ -467,7 +463,7 @@ public class tela_app extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCriarRelatorioMensalActionPerformed
 
     private void btnCriarRelatorioPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarRelatorioPacienteActionPerformed
-        System.out.println("Relatorio Paciente");
+
     }//GEN-LAST:event_btnCriarRelatorioPacienteActionPerformed
 
     /**
