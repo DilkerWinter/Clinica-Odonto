@@ -2,24 +2,36 @@ package org.example.Model.Paciente;
 
 
 import org.example.Model.Paciente.Contato.Contato;
+import org.example.Model.Paciente.Endereco.Endereco;
 
+import javax.persistence.*;
 import java.sql.Date;
 
+@Entity
+@Table(name = "paciente")
 public class Paciente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
     private String nome;
 
+    @Column(unique = true, nullable = false)
     private String cpf;
 
-    private Date datanascimento;
+    @Column(name = "datanascimento", nullable = false)
+    private Date data_nascimento;
 
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "contato", referencedColumnName = "id")
     private Contato contato;
 
 
-
-
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "endereco", referencedColumnName = "id")
+    private Endereco endereco;
 
     public Integer getId() {
         return id;
@@ -45,12 +57,27 @@ public class Paciente {
         this.cpf = cpf;
     }
 
-    public Date getDatanascimento() {
-        return datanascimento;
+    public Date getData_nascimento() {
+        return data_nascimento;
     }
 
-    public void setDatanascimento(Date datanascimento) {
-        this.datanascimento = datanascimento;
+    public void setData_nascimento(Date data_nascimento) {
+        this.data_nascimento = data_nascimento;
     }
 
+    public Contato getContato() {
+        return contato;
+    }
+
+    public void setContato(Contato contato) {
+        this.contato = contato;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 }
