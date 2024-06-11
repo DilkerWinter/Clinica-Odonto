@@ -300,30 +300,40 @@ public class tela_cadastroConsulta extends javax.swing.JFrame {
             PacienteController pacienteController = new PacienteController();
             FuncionarioController funcionarioController = new FuncionarioController();
 
-            Paciente paciente = pacienteController.getPacientePorCPF(inputCPF.getText());
-            Funcionario funcionario = funcionarioController.getByUsuario(inputFuncionario.getText());
+            String cpf = inputCPF.getText();
+            String usuario = inputFuncionario.getText();
+            String observacao = inputObservacao.getText();
+            String prontuarioDescricao = inputProntuario.getText();
+            String formaPagamento = inputFormaPgt.getText();
+            String valorTexto = inputValor.getText();
 
-            Consulta consulta = new Consulta();
-            consulta.setFuncionario(funcionario);
-            consulta.setPaciente(paciente);
-            consulta.setObservacao(inputObservacao.getText());
+            if (!cpf.isEmpty() && !usuario.isEmpty() && !observacao.isEmpty() && !prontuarioDescricao.isEmpty() && !formaPagamento.isEmpty() && !valorTexto.isEmpty()) {
+                Paciente paciente = pacienteController.getPacientePorCPF(cpf);
+                Funcionario funcionario = funcionarioController.getByUsuario(usuario);
 
-            Prontuario prontuario = new Prontuario();
-            prontuario.setDescricao(inputProntuario.getText());
-            consulta.setProntuario(prontuario);
+                Consulta consulta = new Consulta();
+                consulta.setFuncionario(funcionario);
+                consulta.setPaciente(paciente);
+                consulta.setObservacao(observacao);
 
-            FormaPagamento formaPagamento = new FormaPagamento();
-            formaPagamento.setForma(inputFormaPgt.getText());
-            consulta.setFormaPagamento(formaPagamento);
+                Prontuario prontuario = new Prontuario();
+                prontuario.setDescricao(prontuarioDescricao);
+                consulta.setProntuario(prontuario);
 
-            String texto = inputValor.getText();
-            float valor = Float.parseFloat(texto);
-            consulta.setValor(valor);
+                FormaPagamento formaPagamentoObj = new FormaPagamento();
+                formaPagamentoObj.setForma(formaPagamento);
+                consulta.setFormaPagamento(formaPagamentoObj);
 
-            consultaController.addConsulta(consulta);
+                float valor = Float.parseFloat(valorTexto);
+                consulta.setValor(valor);
 
-            JOptionPane.showMessageDialog(this, "Consulta adicionada com sucesso!");
-            this.dispose();
+                consultaController.addConsulta(consulta);
+
+                JOptionPane.showMessageDialog(this, "Consulta adicionada com sucesso!");
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Erro na criacao verifique se os campos foram devidamente preenchidos", "Erro", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
@@ -331,6 +341,7 @@ public class tela_cadastroConsulta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Ocorreu um erro ao adicionar a consulta.", "Erro", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
+
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
