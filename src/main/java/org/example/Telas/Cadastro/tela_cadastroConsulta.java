@@ -114,7 +114,7 @@ public class tela_cadastroConsulta extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Observação")
+        jLabel4.setText("Observação");
 
         jButton1.setBackground(new java.awt.Color(206, 6, 147));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
