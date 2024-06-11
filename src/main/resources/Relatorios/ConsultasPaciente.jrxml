@@ -3,17 +3,22 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ConsultasPaciente" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4c74c884-f5e6-4a69-873f-ef6208481e50">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="paciente_id" class="java.lang.Integer"/>
+
 	<queryString>
-		<![CDATA[SELECT p.nome AS nome_paciente,
-       c.observacao AS observacao_consulta,
-       c.valor AS valor_consulta,
-       c.formapagamento AS formapagamento_consulta,
-       f.nome AS nome_funcionario,
-       f.cargo AS cargo_funcionario
-FROM consulta c
-JOIN paciente p ON c.paciente_id = p.id
-JOIN funcionario f ON c.funcionario_id = f.id
-WHERE c.paciente_id = 18]]>
+		<![CDATA[
+        SELECT
+            p.nome AS nome_paciente,
+            c.observacao AS observacao_consulta,
+            c.valor AS valor_consulta,
+            c.formapagamento AS formapagamento_consulta,
+            f.nome AS nome_funcionario,
+            f.cargo AS cargo_funcionario
+        FROM consulta c
+        JOIN paciente p ON c.paciente_id = p.id
+        JOIN funcionario f ON c.funcionario_id = f.id
+        WHERE c.paciente_id = $P{paciente_id}
+        ]]>
 	</queryString>
 	<field name="nome_paciente" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="nome_paciente"/>

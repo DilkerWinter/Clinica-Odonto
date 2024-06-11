@@ -11,6 +11,7 @@ import org.example.Controller.Consulta.ConsultaController;
 import org.example.Telas.Buscar.tela_buscaAgendamento;
 import org.example.Telas.Buscar.tela_buscaConsulta;
 import org.example.Telas.Buscar.tela_buscaPaciente;
+import org.example.Telas.Buscar.tela_buscarPacienteRelatorio;
 import org.example.Telas.Cadastro.tela_cadastroAgendamento;
 import org.example.Telas.Cadastro.tela_cadastroConsulta;
 import org.example.Telas.Cadastro.tela_cadastroPaciente;
@@ -463,7 +464,8 @@ public class tela_app extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCriarRelatorioMensalActionPerformed
 
     private void btnCriarRelatorioPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarRelatorioPacienteActionPerformed
-
+        tela_buscarPacienteRelatorio telaBuscar = new tela_buscarPacienteRelatorio();
+        telaBuscar.setVisible(true);
     }//GEN-LAST:event_btnCriarRelatorioPacienteActionPerformed
 
     /**
